@@ -1,3 +1,5 @@
+package day02;
+
 import java.util.Scanner;
 
 public class OperatorEx08 {
@@ -27,14 +29,6 @@ public class OperatorEx08 {
 		
 		scan.close();
 		
-		
-		
-		
-		
-		
-		
-		
-
 	}
-
+	
 }

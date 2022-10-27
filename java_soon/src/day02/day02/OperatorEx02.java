@@ -1,6 +1,6 @@
 package day02;
 
-public class OpereatorEx02 {
+public class OperatorEx02 {
 
 	public static void main(String[] args) {
 		/* 증감 연산자는 최종적으로 1증가/ 1감소

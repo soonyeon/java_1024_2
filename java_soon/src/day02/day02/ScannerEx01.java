@@ -21,11 +21,7 @@ public class ScannerEx01 {
 		System.out.println(num3);
 		System.out.println(num4);
 		
-<<<<<<< HEAD
-=======
-		
-		
->>>>>>> main
+
 		scan.close();
 	}
 
