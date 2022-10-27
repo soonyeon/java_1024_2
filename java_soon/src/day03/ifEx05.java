@@ -28,12 +28,12 @@ public class ifEx05 {
 				
 		}
 		
-		int num = 6;
+
 		
-		if (num % 2 == 0 && num % 3 != 0) {
+		if (num % 2 == 0) {
 			System.out.println(num + "은 2의 배수");
 		
-		}else if(num % 3 == 0 && num %2 != 0 ){
+		}else if(num % 3 == 0){
 			System.out.println(num + "은 3의 배수" );
 		
 		}else if(num % 6 == 0){
@@ -50,4 +50,5 @@ public class ifEx05 {
 		
 	}
 
+}
 }
