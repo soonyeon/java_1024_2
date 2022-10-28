@@ -17,7 +17,7 @@ public class ForEx02 {
 	//	System.out.println("정수를 입력하세요 : ");
 		//int num = scan.nextInt();
 
-	    int i; sum = 0;
+	    int i, sum = 0;
 	    for( i = 1 ; i <= 5  ; i++ ) { //외우는걸 추천함
 		
 			System.out.println(i);
