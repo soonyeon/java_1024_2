@@ -13,7 +13,7 @@ public class ArrayEx05 {
 		 */
 		
 		
-		int num; //소수인지 판별하려는 수
+		int num=121; //소수인지 판별하려는 수
 		int i;//약수를 찾기 위해 1부터 num까지 증가시키려는 수
 		int count;//num의 약수 개수를 저장하는 수
 		int arr[] = new int [5]; //소수를 저장할 5개짜리 정수 배열
@@ -39,7 +39,7 @@ public class ArrayEx05 {
 		for(int tmp : arr ) {
 			System.out.println(tmp + " ");
 		}
-	}
+	
 	}
 
 }

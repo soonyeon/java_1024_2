@@ -33,10 +33,10 @@ public class ForUpDownEx02 {
 		for( ; ; ){
 			r = (int)(Math.random()*(max - min +1)+min);
 			System.out.println( min + "~" + max + "사이의 랜덤한 수를 맞추세요");
-			System.out.println(r);
 				num = min - 1;							
 				for( ;r!=num; ) {
-					
+					System.out.println("숫자를 입력하세요");
+					num = scan.nextInt();
 					if(num == r){
 						 System.out.println("정답입니다");
 					}	 
@@ -50,10 +50,11 @@ public class ForUpDownEx02 {
 					}	
 				}
 				System.out.println("더 하시겠습니까?(y/n) : ");
-				if(scan.next().charAt() == 'n') {
+				if(scan.next().charAt(0) == 'n') {
 					break;
 				}
 			}
+			System.out.println("프로그램을 종료합니다");
 			scan.close();
 		}
 }

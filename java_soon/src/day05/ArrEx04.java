@@ -32,13 +32,12 @@ public class ArrEx04 {
 		
 		// i는 0부터 배열의 크기보다 작을때까지 1씩 증가 
 			int sum = 0;
-			double avg;
 			
 			for( int i = 0; i< score.length; i ++) {
 				sum += score[i];
 			}
 			double avg = (double)sum / score.length;
-			System.out.println("학생들의 평균 : " " + avg);
+			System.out.println("학생들의 평균 :  " + avg);
 	
 			//향상된 for문
 			sum = 0;
@@ -47,7 +46,7 @@ public class ArrEx04 {
 			}
 			
 			avg = (double)sum / score.length;
-			System.out.println("학생들의 평균 : " " + avg);
+			System.out.println("학생들의 평균 :  " + avg);
 		
 		
 	}

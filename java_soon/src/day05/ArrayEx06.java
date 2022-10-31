@@ -34,6 +34,7 @@ public class ArrayEx06 {
 		int num = scan.nextInt();
 		
 		//반복횟수 : 4번 ->
+		int num2= num;
 		int arr[] = new int[size];
 		for(int i = size-1; i >=0; i-- ) {
 			arr[i] = num % 10;
@@ -43,9 +44,10 @@ public class ArrayEx06 {
 		for(int tmp:arr) {
 			System.out.println(tmp);
 		}
-		
-		while(num2! = 0) {
-			arr[i--]=num %10
+		System.out.println();
+		int i = size -1;
+		while(num2> 0) {
+			arr[i--]=num %10;
 					num =num / 10;//num /= 10;
 		}
 		for(int tmp:arr) {

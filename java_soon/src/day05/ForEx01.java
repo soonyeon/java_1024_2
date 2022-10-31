@@ -22,7 +22,7 @@ public class ForEx01 {
 			)
 		*/
 		
-		for(i=1; i<=; i++);
+		for(i=1; i<=5; i++);
 			System.out.println(i);
 		
 		
