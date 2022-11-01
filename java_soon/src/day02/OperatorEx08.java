@@ -19,10 +19,10 @@ public class OperatorEx08 {
 		int num = scan.nextInt();
 		
 		// 입력받은 정수를 2로 나누었을대 나머지가 0과 같은지를 변수에 저장
-		boolean isEven = num % 2 == 0;
+		boolean Even = num % 2 == 0;
 		
 		// 나머지가 0과 같으면 짝수를, 같지 않으면 홀수를 저장
-		String result = isEven ? "짝수" : "홀수";
+		String result = Even ? "짝수" : "홀수";
 		
 		// 결과를 출력
 		System.out.println(num + "는 " + result + "입니다.");
