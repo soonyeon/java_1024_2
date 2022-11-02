@@ -26,8 +26,8 @@ public class MethodEx04 {
 		System.out.println(t.a);
 		t.a=20;
 	}
-
+}
 	class Test{	
 		int a;
-	}
+	
 }
