@@ -15,31 +15,31 @@ public class UpDownGameManager2222222 {
 		//반복
 		
 		    // 메뉴출력
-		int menu;
-		Record [] records = new Record [5];
-		do {
-			printMenu(
-		
-				"-----------",
-				"메뉴",
-				"1. 플레이",
-				"2. 기록확인",
-				"3. 종료",
-				"-----------",
-				"메뉴 선택 : "
-			);			
-		
-		    // 메뉴선택
-		menu = selectMenu();
-		
-			// 선택한 메뉴에 따른 기능 실행
-		runMenu(menu,records);
-				//플레이
-					//랜덤수 생성
-		public static int random(int min, int max) {
-			return (int)(Math.random()*(max - min + 1)+min);
-		}
-		
+//		int menu;
+//		Record [] records = new Record [5];
+//		do {
+//			printMenu(
+//		
+//				"-----------",
+//				"메뉴",
+//				"1. 플레이",
+//				"2. 기록확인",
+//				"3. 종료",
+//				"-----------",
+//				"메뉴 선택 : "
+//			);			
+//		
+//		    // 메뉴선택
+//		menu = selectMenu();
+//		
+//			// 선택한 메뉴에 따른 기능 실행
+//		runMenu(menu,records);
+//				//플레이
+//					//랜덤수 생성
+//		public static int random(int min, int max) {
+//			return (int)(Math.random()*(max - min + 1)+min);
+//		}
+//		
 		
 					//반복
 						//사용자 입력
@@ -66,7 +66,7 @@ public class UpDownGameManager2222222 {
 		
 				//종료
 
-		}while(true);
+//		}while(true);
 		
 		
 /**
@@ -74,60 +74,60 @@ public class UpDownGameManager2222222 {
  * 
  * @return
  */
-	public void printMenu() {
-		
-	}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-	private static void runMenu(int menu, Record[] records) {
-		switch(menu) {
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}
-
-	private static void printMenu(String string, String string2, String string3, String string4, String string5,
-			String string6, String string7) {
-		
-		for(int i = 0; i<strs.length; i++) {
-			System.out.print(strs[i] + (i!= strs.length-1?"\n":""));
-		}
-		
-	}
-
-	private static int selectMenu() {
-		Scanner scan = new Scanner(System.in);
-		return scan.nextInt();
+//	public void printMenu() {
+//		
+//	}
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//
+//	private static void runMenu(int menu, Record[] records) {
+//		switch(menu) {
+//
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//	}
+//
+//	private static void printMenu(String string, String string2, String string3, String string4, String string5,
+//			String string6, String string7) {
+//		
+//		for(int i = 0; i<strs.length; i++) {
+//			System.out.print(strs[i] + (i!= strs.length-1?"\n":""));
+//		}
+//		
+//	}
+//
+//	private static int selectMenu() {
+//		Scanner scan = new Scanner(System.in);
+//		return scan.nextInt();
 	}
 
 }
