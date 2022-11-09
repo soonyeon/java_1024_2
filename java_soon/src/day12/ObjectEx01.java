@@ -7,8 +7,8 @@ public class ObjectEx01 {
 		Student std2 = new Student();
 		System.out.println(std1);
 		System.out.println(std2);
-		System.out.println("두 개체를 ==로 비교 :"+(std1 == std2));
-		System.out.println("두 개체를 equals()로 비교 :"+(std1.equals(std2)));
+		System.out.println("두 개체를 ==로 비교 : " + (std1 == std2));
+		System.out.println("두 개체를 equals()로 비교 : " + (std1.equals(std2)));
 	}
 
 }

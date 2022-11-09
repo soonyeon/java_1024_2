@@ -1,9 +1,5 @@
 package day12;
 
-import java.util.Iterator;
-
-import day12.RemoteController.TvRemoteController;
-
 public class InterfaceEx01 {
 
 	public static void main(String[] args) {
@@ -14,31 +10,22 @@ public class InterfaceEx01 {
 		//remocon1.print();
 		((TvRemoconA)remocon1).print();
 		TvRemoconA r2 = new TvRemoconA();
-		
-		for(int i = 0; i<10; i ++) {
+		r2.turn();
+		for(int i = 0; i<10; i++) {
 			r2.channelUp();
 		}
-		for(int i = 0; i<10; i ++) {
+		for(int i = 0; i<2; i++) {
 			r2.channelDown();
 		}
-		for(int i = 0; i<10; i ++) {
+		r2.channel(15);
+		for(int i = 0; i<2; i++) {
 			r2.volumnUp();
 		}
-		for(int i = 0; i<10; i ++) {
+		for(int i = 0; i<5; i++) {
 			r2.volumnDown();
 		}
-		
-		
-		r2.turn();
-		r2.chnnerlup();
-		r2.chnnerlup();
-		r2.chnnerlup();
-		r2.chnnerlup();
-		r2.chnnerlDown();
-		
+		r2.print();
 	
 	}
-	
-	
 
 }

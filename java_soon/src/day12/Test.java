@@ -18,7 +18,7 @@ interface TestA{
 }
 interface TestB{
 	void print();
-	
+}	
 interface TestC{
 	void print();
 }

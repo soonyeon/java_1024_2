@@ -16,16 +16,19 @@ public class WhileCharEx01 {
 			if(ch == 'q') {
 				break;	
 			}
+			else {
+				System.out.println("계속");
+			}
 		}
 		
 		//ch의 초기값을 잘 설정하여 while문 조건식을 이용한 예제
 		
 		ch = 'a';
-		while(ch != 'q') {
-			System.out.println("문자를 입력하세요.(종료 : q) : ");
-			ch = scan.next().charAt(0);
-			
-		}
+//		while(ch != 'q') {
+//			System.out.println("문자를 입력하세요.(종료 : q) : ");
+//			ch = scan.next().charAt(0);
+//			
+//		}
 		scan.close();
 		}
 		
