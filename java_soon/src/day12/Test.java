@@ -13,9 +13,9 @@ public class Test {
 	
 }
 
-interface TestA{
-	void print();
-}
+//interface TestA{
+//	void print();
+//}
 interface TestB{
 	void print();
 }	

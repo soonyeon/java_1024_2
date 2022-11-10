@@ -12,14 +12,13 @@ public class TvRemoconA implements TvRemoteController {
 		power = !power;
 	}
 
-
 	@Override
 	public void channel(int channel) {
 		if(!power) {
 			return;
 		}
 		this.channel = channel;
-
+		System.out.println("채널 : "+ channel);
 	}
 
 	@Override
@@ -27,28 +26,28 @@ public class TvRemoconA implements TvRemoteController {
 		if(!power) {
 			return;
 		}
-		if(!power)
-			return;
 		channel++;
+		System.out.println("채널 : "+ channel);
 	}
 
 	@Override
-	public void channerlDown() {
+	public void channelDown() {
 		if(!power) {
 			return;
-		}	
+		}
 		channel--;
-		channel = channel<1 ? 999 : channel
+		channel = channel < 1 ? 999 : channel;
+		System.out.println("채널 : "+ channel);
 	}
 
 	@Override
-	public void volumnlUp() {		
+	public void volumnUp() {
 		if(!power) {
 			return;
 		}
 		volumn++;
 		volumn = volumn > 30 ? 30 : volumn;
-		System.out.print("볼륨 : "+volumn);
+		System.out.println("볼륨 : " + volumn);
 	}
 
 	@Override
@@ -57,14 +56,12 @@ public class TvRemoconA implements TvRemoteController {
 			return;
 		}
 		volumn--;
-		volumn = volumn > 0 ? 0 : volumn;
-		System.out.println("볼룸 : "+volumn);
+		volumn = volumn < 0 ? 0 : volumn;
+		System.out.println("볼륨 : " + volumn);
 	}
-
-	public static void print() {
+	public void print() {
 		System.out.println("전원 : " + (power ? "ON" : "OFF"));
-		System.out.println("채널 : " + channel );
-		System.out.println("채널 : " + volumnl );
+		System.out.println("채널 : " + channel);
+		System.out.println("볼륨 : " + volumn);
 	}
-
 }
