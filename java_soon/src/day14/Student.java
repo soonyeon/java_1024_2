@@ -1,17 +1,17 @@
-package day13;
+package day14;
+
+import java.util.ArrayList;
 
 import lombok.Data;
 
 @Data
-public class Student2 {
+public class Student {
 	//필드 : 학년, 반, 번호, 이름, 성적들
 	private int grade;
 	private int classNum;
 	private int num;
 	private String name;
-	private Score []scoreList;
-	private int maxSize; //최대 저장 가능한 성적 수
-	private int count; //현재 저장된 성적 수 
+	private ArrayList<Score> scoreList = new ArrayList<Score>(); 
 	
 	/**
 	 * 학생 정보에 성적을 추가하는 메소드
@@ -20,24 +20,17 @@ public class Student2 {
 	 */
 	public boolean addScore(Score score) {
 		if(score == null) {
-			return false;
+			throw new RuntimeException("성적 정보가 없어서 추가할 수 없습니다.");
 		}
-		//배열에 성적들이 꽉 찾을 때
-		if(count == maxSize) {
-			return false;
-		}
+		
 		//학생의 성적 정보들 중에서 과목, 학기가 같은 성적 정보가 없으면 추가
-		for(int i = 0; i < count; i++) {
-			if(score.equals(scoreList[i])) {
-				return false;
-			}
+		boolean res = scoreList.contains(score);
+		if(res) {
+			return false;
 		}
-		scoreList[count] = new Score(score);
-		count ++;
+		scoreList.add(new Score(score));
 		return true;
 	}
-	//메소드 : getter/setter, equals():같은 객체인지 비교하기 위해
-	//        toString() : 객체를 쉽게 문자열로 만들기 위해 
 	
 	@Override
 	public String toString() {
@@ -47,25 +40,21 @@ public class Student2 {
 	
 	//생성자 : 초기화
 	//학년, 반, 번호, 이름이 필요한 생성자(학생정보 추가시 활용)
-	public Student2(int grade, int classNum, int num, String name) {
+	public Student(int grade, int classNum, int num, String name) {
 		this.grade = grade;
 		this.classNum = classNum;
 		this.num = num;
 		this.name = name;
-		maxSize=30;
-		scoreList = new Score[maxSize];
 	}
 	//학년, 반, 번호가 필요한 생성자(성적 추가 시 학생이 있는지 없는지 판별할 때 활용)
-	public Student2(int grade, int classNum, int num) {
+	public Student(int grade, int classNum, int num) {
 		this.grade = grade;
 		this.classNum = classNum;
 		this.num = num;
-		maxSize=30;
-		scoreList = new Score[maxSize];
 	}
 	public void printScore() {
-		for(int i = 0; i<count; i++) {
-			System.out.println(scoreList[i]);
+		for(Score tmp : scoreList) {
+			System.out.println(tmp);
 		}
 	}
 
@@ -77,7 +66,7 @@ public class Student2 {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Student2 other = (Student2) obj;
+		Student other = (Student) obj;
 		if (classNum != other.classNum)
 			return false;
 		if (grade != other.grade)
@@ -97,3 +86,4 @@ public class Student2 {
 		return result;
 	}
 }
+
