@@ -1,82 +1,85 @@
-package etc;
+package day14;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import day14.Score;
-
-public class StudentManagerTest2 {
+public class StudentManagerTest01 {
 
 	public static void main(String[] args) {
-		private int grade;
-		private int classNum;
-		private int num;
-		private ArrayList<Score> scoreList = new ArrayList<Score>();
-		}
-	}
+		Scanner scan = new Scanner(System.in);
+		ArrayList<Student1> stds = new ArrayList<Student1>();
+		
+		int menu = -1;
+		for( ;menu != 4 ; ) {
 
-	private static int runMenu(int menu, ArrayList<student> stds) {
+			printMenu();
+			
+			menu = scan.nextInt();
+			
+			runMenu(menu, stds);
+		}//for문 끝
+	}//main 끝
+
+	private static void runMenu(int menu, ArrayList<Student1> stds) {
 		Scanner scan = new Scanner(System.in);
 		switch(menu) {
 		case 1:
 			if(addStudent(stds)) {
-				System.out.println("학생을 추가했습니다");
-			}
-			else {
-				System.out.println("학생을 추가하지 못했습니다");
+				System.out.println("학생을 추가했습니다.");
+			}else {
+				System.out.println("학생을 추가하지 못했습니다.");
 			}
 			break;
-			case 2:
-				if(addScore(stds)) {
-					System.out.println("성적을 등록했습니다.");
-				}else {
-					System.out.println("성적 등록에 실패했습니다.");
-				}
-				break;
-			case 3:
-				printStudentList(stds);
-				break;
-			case 4:
-				System.out.println("프로그램 종료");
-				break;
-			default:
-				System.out.println("잘못된 메뉴!!");
+		case 2:
+			if(addScore(stds)) {
+				System.out.println("성적을 등록했습니다.");
+			}else {
+				System.out.println("성적을 등록하지 못했습니다.");
 			}
-			return count;
+			break;
+		case 3:	
+			printStudentList(stds);
+			break;
+		case 4: 
+			System.out.println("프로그램 종료");
+			break;
+		default:
+			System.out.println("잘못된 메뉴!!");
 		}
+	}
 
-	private static void printStudentList(ArrayList<Student> stds) {
-		for(Student tmp : stds) {
+	private static void printStudentList(ArrayList<Student1> stds) {
+		for(Student1 tmp : stds) {
 			System.out.println(tmp);
 			tmp.printScore();
 		}
 	}
 
-	private static boolean addScore(ArrayList<Student> stds) {
+	private static boolean addScore(ArrayList<Student1> stds) {
 		System.out.println("성적을 추가할 학생 정보 입력");
-		Student tmp = scanStudentBaseInfo();
-		int index = stds. indexOf(tmp);
+		Student1 tmp = scanStudentBaseInfo();
+		int index = stds.indexOf(tmp);
 		
 		if(index == -1) {
 			return false;
 		}
+		
 		System.out.println("성적 정보를 입력하세요.");
-		return stds.get(index). addScore(scanScore());
+		return stds.get(index).addScore(scanScore());
 	}
 
-	private static boolean addStudent(ArrayList<Student> stds) {
+	private static boolean addStudent(ArrayList<Student1> stds) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("추가할 학생 정보 입력");
-		Student tmp = scanStudentBaseInfo();
-
+		Student1 tmp = scanStudentBaseInfo();
+		
 		System.out.print("이름 : ");
 		tmp.setName(scan.next());
 		
 		int index = stds.indexOf(tmp);
 		
-		
-		if(index == -1 ) {
-			stds.add<student>;
+		if(index == -1) {
+			stds.add(tmp);
 			return true;
 		}
 		return false;
@@ -97,7 +100,7 @@ public class StudentManagerTest2 {
 		return new Score(title, term, midScore, finalScore, performace);
 	}
 
-	private static Student scanStudentBaseInfo() {
+	private static Student1 scanStudentBaseInfo() {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("학년 : ");
 		int grade = scan.nextInt();
@@ -105,18 +108,7 @@ public class StudentManagerTest2 {
 		int classNum = scan.nextInt();
 		System.out.print("번호 : ");
 		int num = scan.nextInt();
-		return new Student(grade, classNum, num);
-		
-	}
-
-	private static int indexOfStudent(Student tmp) {
-		for(Student tmp : stds) {
-			System.out.println(tmp);
-			tmp.printScore();
-			}
-		}
-		
-		return 0;
+		return new Student1(grade, classNum, num);
 	}
 
 	private static void printMenu() {
@@ -126,9 +118,5 @@ public class StudentManagerTest2 {
 		System.out.println("3. 학생 정보 출력");
 		System.out.println("4. 프로그램 종료");
 		System.out.print("메뉴 선택 : ");
-		
 	}
 }
-
-
-
