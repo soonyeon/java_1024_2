@@ -129,7 +129,7 @@ public class ListEx01_1 {
 
 
 	private static void printTodoList(ArrayList<String> todoList) {
-		if(todoList == null || todoList.size() == 0) {
+		if(todoList == null || todoList.size() == 0) 
 			System.out.println("----------------");
 			System.out.println("저장된 할 일이 없습니다");
 			System.out.println("----------------");
