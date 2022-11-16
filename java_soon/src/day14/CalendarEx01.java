@@ -10,19 +10,19 @@ public class CalendarEx01 {
 		 */
 		Calendar cal = Calendar.getInstance();
 	//	System.out.println();
-		cal.add(Calendar.MONTH, -1);  // 지금 시간으로 부터 한달 전 날짜를 구함
+	//	cal.add(Calendar.MONTH, -1);  // 지금 시간으로 부터 한달 전 날짜를 구함
 		int year = cal.get(Calendar.YEAR);
-		System.out.println(year + "년 ");
+		System.out.print(year + "년 ");
 		int month = cal.get(Calendar.MONTH);
-		System.out.println(month+ "월 ");
+		System.out.print(month+ "월 ");
 		int date = cal.get(Calendar.DATE);
-		System.out.println(date + "일");
+		System.out.print(date + "일 ");
 		int hour = cal.get(Calendar.HOUR);
-		System.out.println(hour + "시");
+		System.out.print(hour + "시 ");
 		int minute = cal.get(Calendar.MINUTE);
-		System.out.println(minute + "붙");
+		System.out.print(minute + "분 ");
 		int second = cal.get(Calendar.SECOND);
-		System.out.println(year + "초");
+		System.out.print(year + "초 ");
 		
 		
 	}
