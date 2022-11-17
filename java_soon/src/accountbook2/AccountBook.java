@@ -1,12 +1,11 @@
-package example.accountbook;
+package accountbook2;
 
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AccountBook{
-	
-	// 스텍 = 접시쌓기 위에서 쌓고 위에서 빼고 
 	ArrayList<Item> list = new ArrayList<Item>();
 	AccountService accountService = new AccountServiceImp();
 	Scanner scan;
@@ -14,6 +13,7 @@ public class AccountBook{
 	public void run() {
 		System.out.println("가계부 프로그램 실행합니다.");
 		int menu = -1;
+		
 		do {
 			try {
 				accountService.printMenu();
@@ -27,6 +27,7 @@ public class AccountBook{
 			}catch(RuntimeException e) {
 				System.out.println(e.getMessage());
 			}
+			
 		}while(menu != 5);
 		System.out.println("가계부 프로그램 종료합니다.");
 	}
