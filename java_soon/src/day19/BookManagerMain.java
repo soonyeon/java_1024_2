@@ -7,9 +7,6 @@ public class BookManagerMain {
 
 	private static ArrayList<BookInfo> list;
 
-
-
-
 	public static Scanner scan = new Scanner(System.in);
 	public static void main(String[] args) {
 		/* 도서 관리 프로그램을 작성 하세요
@@ -23,7 +20,6 @@ public class BookManagerMain {
 		 *    ㄴ 저자로 조회
 		 *    ㄴ 출판사로 조회
 		 *    ㄴ 분류로 조회
-		 *  
 		 */
 		
 		ArrayList<BookInfo>list = new ArrayList<BookInfo>();
@@ -42,8 +38,6 @@ public class BookManagerMain {
 		
 }
 
-	
-	
 	private static void runMenu(int menu, ArrayList<BookInfo> bookList) {
 		int subMenu = 0;
 		switch(menu) {
@@ -61,7 +55,7 @@ public class BookManagerMain {
 			
 			
 			runSubMenu(list,subMenu);
-			//System.out.println(tmp);
+			
 			
 			break;
 
@@ -81,13 +75,11 @@ public class BookManagerMain {
 		}
 	}
 
-
 	private static void runSubMenu(ArrayList<BookInfo> list, int subMenu) {
 		switch(subMenu) {
 		case 1:
 			System.out.println("도서명 입력 : ");
 			String title = scan.nextLine();
-			
 			break;
 		case 2:
 			System.out.println("저자 입력 : ");
@@ -109,7 +101,7 @@ public class BookManagerMain {
 			}
 			break;
 		default:
-			System.out.println("메뉴를 잘 못 선택하였습니");
+			System.out.println("메뉴를 잘 못 선택하였습니다");
 		}
 	}	
 
@@ -147,7 +139,10 @@ public class BookManagerMain {
 		System.out.println("ISBN 입력 :");
 		String isbn = scan.nextLine();
 		
-		return new BookInfo(title, authorName, price, publisher, ci, isbn);
+		//return new BookInfo(title, authorName, price, publisher, ci, isbn);
+		BookInfo book = new BookInfo(title, authorName, price, publisher, ci, isbn);
+		list.add(book);
+		return book;
 	}
 
 	
@@ -159,8 +154,6 @@ public class BookManagerMain {
 		System.out.println("--------------");
 	}
 
-		
-	
 	
 }
 /*@Data
