@@ -11,7 +11,7 @@ public class ArrEx04 {
 		 */
 		
 		
-		int score[] = new int[5];
+		int score[] = new int[2];
 		
 			
 		//학생 5명의 국어 성적(정수)을 입력받고
@@ -33,19 +33,25 @@ public class ArrEx04 {
 		// i는 0부터 배열의 크기보다 작을때까지 1씩 증가 
 			int sum = 0;
 			
-			for( int i = 0; i< score.length; i ++) {
-				sum += score[i];
-			}
-			double avg = (double)sum / score.length;
-			System.out.println("학생들의 평균 :  " + avg);
-	
+//			for( int i = 0; i< score.length; i ++) {
+//				System.out.print(score[i]+" ");
+//			
+//				sum += score[i];
+//			}
+//			System.out.println();
+//			double avg = (double)sum / score.length;
+//			System.out.println("학생들의 평균 :  " + avg);
+//	
 			//향상된 for문
 			sum = 0;
 			for(int tmp: score) {
+			System.out.print(tmp+" ");
 				sum += tmp;
+			
 			}
 			
-			avg = (double)sum / score.length;
+			System.out.println();
+			double avg = (double)sum / score.length;
 			System.out.println("학생들의 평균 :  " + avg);
 		
 		
