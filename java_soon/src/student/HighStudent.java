@@ -1,4 +1,4 @@
-package example.student;
+package student;
 
 public class HighStudent {
 	private int grade;
