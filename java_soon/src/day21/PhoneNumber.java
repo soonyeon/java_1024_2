@@ -7,34 +7,27 @@ import lombok.Data;
 @Data
 public class PhoneNumber {
 	private String pName, number;
-	private String name;
 	
-
 	public void setNumber(String number) {
-		String regex = "\\d{2,3}(\\d{3,4}-\\d{4}";
+		String regex = "\\d{2,3}-\\d{3,4}-\\d{4}";
 		if(Pattern.matches(regex, number)) {
 			this.number = number;
 		}else {
-			throw new RuntimeException("예외 발생 : 번호를 잘못입력했습니다");
+			throw new RuntimeException("예외 발생 : 번호를 잘못입력했습니다.");
 		}
 	}
 
 	public PhoneNumber(String pName, String number) {
 		this.pName = pName;
-		setNumber (number);
+		setNumber(number);
 	}
 	@Override
 	public String toString() {
-		return "[ "+ pName + " : " + number + " ]";
+		return "[ " + pName + " : " + number + " ]";
 	}
 
-	public void update(String name, String company) {
-		this.name = name;
-		this.company = company
-	}
-	public void printPhoneNumber() {
-		for(int i = 0; i <pnList.size(); i++) {
-			System.out.println(i+1+pnList.get(i).toString());
-		}
+	public void update(String pName, String number) {
+		this.pName = pName;
+		this.number = number;
 	}
 }

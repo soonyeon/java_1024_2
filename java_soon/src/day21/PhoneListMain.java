@@ -2,32 +2,31 @@ package day21;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import day20.PhoneNum;
+import java.util.function.Predicate;
 
 public class PhoneListMain {
 	
 	static Scanner scan = new Scanner(System.in) ;
 
 	public static void main(String[] args) {
-		/* 전화번호를 관리하는 프로그램을 작성하세요
-		 *  1. 전화번호 추가(성, 이름, 직장, 전화번호들(이름:번호))
-		 *  2. 전화번호 수정
-		 *  	- 이름으로 검색(성 + 이름)
-		 *  	- 검색된 사람들 중에서 선택
-		 *  	- 성, 이름을 수정할건지, 
-		 *  		기존 등록된 전화번호를 수정할건지,
-		 *  		새 전화번호를 등록할건지를 선택하여 동작
-		 *  3. 전화번호 삭제
-		 *  	- 이름으로 검색(성+이름)
-		 *  	- 검색된 사람들 중에서 선택
-		 *  	- 선택된 사람의 연락처를 삭제
-		 *  4. 전화번호 조회
-		 *  	- 이름으로 검색
-		 *  	- 검색된 사람들 중에서 선택
-		 *  	- 선택된 사람의 연락처를 출력
-		 *  
-		 */
+		/* 전화번호를 관리하는 프로그램을 작성하세요.
+		 * 1. 전화번호 추가(성, 이름, 직장, 전화번호들(이름 : 번호))
+		 * 2. 전화번호 수정
+		 *    - 이름으로 검색(성+이름)
+		 *    - 검색된 사람들 중에서 선택
+		 *    - 성, 이름을 수정할건지, 
+		 *      기존 등록된 전화번호를 수정할건지,
+		 *      새 전화번호를 등록한건지를 선택하여 동작
+		 * 3. 전화번호 삭제
+		 *    - 이름으로 검색(성+이름)
+		 *    - 검색된 사람들 중에서 선택
+		 *    - 선택된 사람의 연락처를 삭제
+		 * 4. 전화번호 조회
+		 *    - 이름으로 검색
+		 *    - 검색된 사람들 중에서 선택
+		 *    - 선택된 사람의 연락처를 출력
+		 * */
+		//반복
 		int menu = -1;
 		ArrayList<PhoneBook> list = new ArrayList<PhoneBook>();
 		do {
@@ -99,34 +98,90 @@ public class PhoneListMain {
 	
 	private static boolean updatePhoneBook(ArrayList<PhoneBook> list) {
 		//이름을 입력
-		
+		scan.nextLine();//엔터 처리
+		//이름을 입력
+		System.out.print("이름 : ");
+		String name = scan.nextLine();
 		//이름이 포함된 전화번호부를 검색하여 출력(번호와 함께)
-		
+		ArrayList<Integer> indexs 
+		= searchPhoneBook(list,p->p.getName().contains(name));
+	
+		printIndexsNumber(list, indexs);
+	
+		System.out.println("번호 선택 : ");
 		//수정할 전화번호부를 선택
+		int selectIndex = scan.nextInt() - 1;
+		
+		if(selectIndex < 0 || selectIndex >= indexs.size())
+			throw new RuntimeException("잘못 선택했습니다.");
 
 		//서브 메뉴 출력
-
+		printSubMenu();
+		
 		//서브 메뉴 선택
-
+		int subMenu = scan.nextInt();
+		
 		//서브 메뉴 실행
+		int index = indexs.get(selectIndex);
+		return runSubMenu(subMenu, list.get(index));
+	}
+
+	private static boolean runSubMenu(int subMenu, PhoneBook pb) {
+		if(pb == null){
+			return false;
+		}
+		switch(subMenu) {
 		//1. 이름, 직장 수정
+		case 1:
 			//이름 직장 입력
-
-			//이름, 직장을 수정
+			scan.nextLine();//공백 처리(메뉴 입력 후 남은 엔터)
+			System.out.print("성명 : ");
+			String name = scan.nextLine();
+			System.out.print("직장 : ");
+			String company = scan.nextLine();
 			
+			//이름, 직장을 수정
+			pb.update(name, company);
+			break;
 		//2. 기존 전화번호 수정
+		case 2:
 			//기존 전화번호들를 출력
-
+			pb.printPhoneNumbers();
 			//수정할 전화번호를 선택
-
+			System.out.print("번호 입력 : ");
+			int index = scan.nextInt() - 1;
 			//이름, 번호를 입력
-
+			scan.nextLine();
+			System.out.print("이름 : ");
+			String pName = scan.nextLine();
+			System.out.print("번호 : ");
+			String number = scan.nextLine();
 			//선택한 전화번호 이름, 번호를 수정
+			pb.getPnList().get(index).update(pName,number);
+			break;
 		//3. 새 전화번호 추가
+		case 3:
 			//이름 번호를 입력
-	
+			scan.nextLine();
+			ArrayList<PhoneNumber> pnList = inputPhoneNumbers();
 			//새 전화번호를 추가
-		return false;
+			pb.getPnList().addAll(pnList);
+			break;
+		default:
+			System.out.println("잘못된 메뉴입니다.");
+			System.out.println("=====================");
+			return false;
+		}
+		return true;
+	}
+
+	private static void printSubMenu() {
+		System.out.println("=======수정 메뉴=======");
+		System.out.println("1. 이름, 직장 수정");
+		System.out.println("2. 기존 전화번호 수정"); 
+		System.out.println("3. 새 전화번호 등록");
+		System.out.println("=====================");
+		System.out.print("메뉴 선택 : ");
 	}
 
 	private static void printIndexsNumber(ArrayList<PhoneBook> list,
@@ -153,6 +208,7 @@ public class PhoneListMain {
 		
 		printIndexsNumber(list, indexs);
 		
+		System.out.println("번호 선택 : ");
 		//조회할 전화번호부를 선택
 		int selectIndex = scan.nextInt() - 1;
 		if(selectIndex < 0 || selectIndex >= indexs.size())
@@ -173,6 +229,7 @@ public class PhoneListMain {
 		//확인된 번지에 있는 번호들을 출력(번호와 함께)
 		printIndexsNumber(list, indexs);
 		
+		System.out.println("번호 선택 : ");
 		//삭제할 전화번호부를 선택
 		int selectIndex = scan.nextInt() - 1;
 		if(selectIndex < 0 || selectIndex >= indexs.size())
@@ -252,4 +309,3 @@ public class PhoneListMain {
 	}
 
 }
-	
