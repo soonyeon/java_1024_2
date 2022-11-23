@@ -14,7 +14,7 @@ public class StudentLog {
 		
 	}
 
-	public StudentLog(Student std2, Object object) {
+	public StudentLog(Student std, String state) {
 		this.std = new Student(std);
 		this.state = state;
 	}

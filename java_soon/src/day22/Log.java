@@ -9,12 +9,18 @@ public class Log {
 	private ArrayList<StudentLog> slogs = new ArrayList<StudentLog>();
 	private String date;
 	
-	public Log(ArrayList<Student> stds, String date) {
+	public Log(ArrayList<StudentLog> stdLogs, String date) {
 		this.date = date;
-		for(Student std : stds) {
-			StudentLog slog = new StudentLog(std, null);
-			slogs.add(slog);
-		}
+		this.slogs = stdLogs; //원래는 깊은 복사 해야 하지만 간단하게 얕은 복사를 이용
+		 
+		
 	}
+
+		
+	
+
+
+		
+	
 
 }

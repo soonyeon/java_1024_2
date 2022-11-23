@@ -10,7 +10,6 @@ public class Student {
 	
 	
 	public Student(String name, String birthday) {
-		super();
 		this.name = name;
 		this.birthday = birthday;
 	}
