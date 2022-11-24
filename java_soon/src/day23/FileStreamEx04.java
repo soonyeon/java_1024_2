@@ -36,6 +36,9 @@ public class FileStreamEx04 {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			
+			
+			
 		}
 		try {
 			fis = new FileInputStream("test.txt");
