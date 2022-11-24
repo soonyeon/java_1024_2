@@ -7,6 +7,8 @@ import day15.Word;
 
 public class UserManagerMain_1 {
 
+	static Scanner scan = new Scanner(System.in);
+	
 	public static void main(String[] args) throws Exception {
 		/* 회원 정보를 관리하는 프로그램을 작성하세요
 		 * - 회원 정보는 아이디, 비번, 이름, 나이, 주민번호로 구성
@@ -41,28 +43,14 @@ public class UserManagerMain_1 {
 	}
 
 	private static void runMenu(int menu, ArrayList<UserImfor> userList) throws Exception {
-		Scanner scan = new Scanner(System.in);
+		
 		
 		switch(menu){
 			case 1:
 				//회원 정보 입력  아이디, 
-				System.out.println("아이디 입력 : ");
-				String ID = scan.nextLine();
-				scan.nextLine();
-				// 비번
-				System.out.println("패스워드 입력 : ");
-				String PW = scan.nextLine();
-				scan.nextLine();
-				// 이름
-				System.out.println("이름 입력 : ");
-				String name = scan.nextLine();
-				scan.nextLine();
-				// 나이
-				System.out.println("나이 입력 : ");
-				int age = scan.nextInt();
-				// 주민번호
-				System.out.println("주민번호 입력 : ");
-				String personalNum = scan.nextLine();
+				
+				addmember(userList);
+
 				break;
 		case 2:	
 				
@@ -82,6 +70,37 @@ public class UserManagerMain_1 {
 		}
 
 	
+	}
+
+
+
+	private static boolean addmember(ArrayList<UserImfor> userList) {
+		System.out.println("아이디 입력 : ");
+		String id = scan.nextLine();
+		// 비번
+		System.out.println("패스워드 입력 : ");
+		String pw = scan.nextLine();
+		// 이름
+		System.out.println("이름 입력 : ");
+		String name = scan.nextLine();
+		// 나이
+		System.out.println("나이 입력 : ");
+		int age = scan.nextInt();
+		scan.nextLine();
+		// 주민번호
+		System.out.println("주민번호 입력 : ");
+		String personalNum = scan.nextLine();
+		
+		UserImfor user= new UserImfor(id, pw, name, age, personalNum);
+		if(userList.contains(user)) {
+			
+			return false;
+		}
+			
+	
+		userList.add(user);
+		return true;
+		
 	}
 
 	private static void userSearch(ArrayList<UserImfor> userList) throws Exception {

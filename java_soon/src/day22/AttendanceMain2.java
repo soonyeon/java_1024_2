@@ -59,113 +59,124 @@ public class AttendanceMain2 {
 				menu = scan.nextInt();
 		
 			// 선택 메뉴 실행
-				switch(menu) {
-				// 1 학생등록
-				case 1:
-					Attendance2 attendance = createAttendance();
-					list.add(attendance);
-					System.out.println("학생 정보가 추가되었습니다");
-					System.out.println(list);
+				runMenu(menu,list);
 				
-					break;
-				// 2 학생 수정
-				case 2:
-					searchStudent(list);
-					
-			
-					break;
-				// 3 학생 삭제
-				case 3:
-					System.out.println("학생 삭제 예정");
-					// 이름과 생년월일을 입력
-			
-					// 입력한 값과 동일한 정보를 리스트에서 불러옴
-			
-						// 일치하는 학생 내역이 있으면 삭제
-			
-						// 일치하는 내역이 없으면 "등록된 학생정보가 없습니다" 출력
-			
-					break;
-				// 4 학생 출결 확인
-				case 4:
-					System.out.println("학생 출결확인 예정");
-					// 이름,생년월일 입력
-			
-					// 일치하는 학생의 날자별 출석 내역 출력
-						
-					break;
-				// 5 출석확인
-				case 5:	
-					System.out.println("출석확인 예정");
-					//날짜 입력
-				
-					//리스트에 저장된 학생 이름을 하나씩 출력
-			
-					// 출석여부 체크
-			
-					break;
-				// 6 출석 수정
-				case 6:
-					System.out.println("출석 수정 예정");
-					// 이름,생년월일 입력
-			
-					// 일치하는 학생의 날자별 출석 내역 출력
-					break;
-				// 7 출석 삭제
-				case 7:
-					System.out.println("출석 삭제 예정");
-					// 날짜 입력
-			
-					// 일치하는 날짜의 출석 삭제
-			
-					break;
-				// 8 날짜별 출석 확인
-				case 8:
-					System.out.println("날짜별 출석 확인 예정");
-					//날짜 입력
-			
-					//해당일 모든학생의 출석내용 출력
-			
-					break;
-				// 9 프로그램 종료
-				case 9:
-					System.out.println("프로그램 종료");
-						
-					break;
-				default:
-					System.out.println("잘못된 입력입니다");
-				}
-				
+
 				
 		}while(menu != 9);
 	}
 
 
-	private static Attendance2 searchStudent(ArrayList<Attendance2> list) {
-		// 이름과 생년월일을 입력
-		scan.nextLine();
-		System.out.println("학생이름 입력 :");
-		String name = scan.nextLine();
-		System.out.println("생년월일 입력(6자리) : ");
-		String birth = scan.nextLine();
+	private static void runMenu(int menu, ArrayList<Attendance2> list) {
+		switch(menu) {
+		// 1 학생등록
+		case 1:
+			Attendance2 attendance = createAttendance();
+			list.add(attendance);
+			System.out.println("학생 정보가 추가되었습니다");
+			System.out.println(list);
 		
-		//이름 생일로 객체 만듬
-		Attendance2 attendance = new Attendance2(name,birth);
-		//학생 리스트에 이름 같은 학생정보를 가져옴
-		int index = list.indexOf(attendance);
-		Attendance2 tmp = list.get(index);
+			break;
+		// 2 학생 수정
+		case 2:
+			searchStudent(list);
+			
+			break;
+		// 3 학생 삭제
+		case 3:
+			System.out.println("학생 삭제 예정");
+			// 이름과 생년월일을 입력
+	
+			// 입력한 값과 동일한 정보를 리스트에서 불러옴
+	
+				// 일치하는 학생 내역이 있으면 삭제
+	
+				// 일치하는 내역이 없으면 "등록된 학생정보가 없습니다" 출력
+	
+			break;
+		// 4 학생 출결 확인
+		case 4:
+			System.out.println("학생 출결확인 예정");
+			// 이름,생년월일 입력
+	
+			// 일치하는 학생의 날자별 출석 내역 출력
+				
+			break;
+		// 5 출석확인
+		case 5:	
+			System.out.println("출석확인 예정");
+			//날짜 입력
 		
-		//가져온 생년월일과 입력한 생년월일을 비교하여 동일하면 가져오고
-		if(!tmp.getBirth().equals(attendance.getBirth())) {
-			return null;
+			//리스트에 저장된 학생 이름을 하나씩 출력
+	
+			// 출석여부 체크
+	
+			break;
+		// 6 출석 수정
+		case 6:
+			System.out.println("출석 수정 예정");
+			// 이름,생년월일 입력
+	
+			// 일치하는 학생의 날자별 출석 내역 출력
+			break;
+		// 7 출석 삭제
+		case 7:
+			System.out.println("출석 삭제 예정");
+			// 날짜 입력
+	
+			// 일치하는 날짜의 출석 삭제
+	
+			break;
+		// 8 날짜별 출석 확인
+		case 8:
+			System.out.println("날짜별 출석 확인 예정");
+			//날짜 입력
+	
+			//해당일 모든학생의 출석내용 출력
+	
+			break;
+		// 9 프로그램 종료
+		case 9:
+			System.out.println("프로그램 종료");
+				
+			break;
+		default:
+			System.out.println("잘못된 입력입니다");
 		}
-		return tmp;
 		
 		
 	}
 
 
+	private static Attendance2 searchStudent(ArrayList<Attendance2> list) {
+		// 이름과 생년월일을 입력
+		System.out.println("학생이름 입력 :");
+		String name = scan.nextLine();
+		//scan.nextLine();
+		System.out.println("생년월일 입력(6자리) : ");
+		String birth = scan.nextLine();
+		//scan.nextLine();
 
+		
+		//이름 생일로 객체 만듬
+		Attendance2 attendance = new Attendance2(name,birth);
+		
+		//출석부 리스트에 이름이 같은 학생정보를 가져옴
+		int index = list.indexOf(attendance);
+		//System.out.println(index);
+		
+		if(index == -1) {
+			return null;
+		}
+		
+		Attendance2 tmp = list.get(index);
+		//가져온 생년월일과 입력한 생년월일을 비교하여 동일하면 가져오고 아니면 null
+		if(!tmp.getBirth().equals(attendance.getBirth())) {
+			return null;
+		}
+		return tmp;
+		
+	}
 
 	private static Attendance2 createAttendance() {
 		scan.nextLine();
@@ -176,12 +187,8 @@ public class AttendanceMain2 {
 		// 입력받은 내용으로 객체 생성
 		return new Attendance2(name,birth);
 		
-		
 	}
-
-
-
-
+	
 	private static void printMenu() {
 		System.out.println("-------메뉴-------");
 		System.out.println("1. 학생등록");
@@ -197,6 +204,8 @@ public class AttendanceMain2 {
 		System.out.println("메뉴 선택 : ");
 		
 	}
+	
+	
 	
 }
 

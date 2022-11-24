@@ -38,23 +38,37 @@ public class PhoneListMain {
 		ArrayList<PhoneBook>list = new ArrayList<PhoneBook>();
 		do {
 			
+<<<<<<< Updated upstream
 			//메뉴 출력
 			printMenu();
 			try {
 				
+=======
+			//메뉴출력
+			printMenu();
+			
+>>>>>>> Stashed changes
 			//메뉴선택
 			menu = scan.nextInt();
 			System.out.println("===============");
 			
 			//선택 메뉴실행
+<<<<<<< Updated upstream
 			runMenu(menu,list);
 			}
 			catch(RuntimeException e) {
 				System.out.println(e.getMessage());
 				System.out.println("===============");
 			}
+=======
+			String name, num;  
 			
 			
+			switch (menu) {
+>>>>>>> Stashed changes
+			
+			
+<<<<<<< Updated upstream
 		}while(menu != 5);		
 
 	}
@@ -97,6 +111,133 @@ public class PhoneListMain {
 			if(updatePhoneBook(list)) {
 				System.out.println("전화번호를 수정했습니다");
 				System.out.println("============-");
+=======
+			case 1:
+				//전화번호 추가(성, 이름, 직장, 전화번호들(이름:번호))
+				//전화번호를 입력(이름 : 번호 => PhoneNumber
+				// 더 입력 할지 물어봄
+				scan.nextLine();//엔터처리
+				System.out.print("성명 또는 직장 입력: ");
+				name = scan.nextLine();
+				System.out.print("전화 번호 입력: ");
+				num = scan.nextLine();
+
+				 
+				//주소록에 추가 => phonBook 개체를 생성
+					//리스트를 생성하여 전화번호 목록에 새 전화번호 추가
+					//위에서 입력받은 전화번호를 이용하여 전화번호 객체 생성
+				PhoneNum num1 = new PhoneNum(name,num);
+				// 리스트에 담는다
+				list.add(num1);
+				break;
+				
+			//2. 번호 수정
+			case 2:
+				
+				int menu2 = -1;
+				do {
+		
+					
+					// 이름을 입력
+					System.out.println("이름 :");
+					
+					// 이름이 포함된 전화번호부를 검색하여 출력(번호와 함께)
+					
+					//수정할 전화번호를 선택
+					
+					//서브메뉴 출력
+					System.out.println("----수정 메뉴----");
+					System.out.println("1. 이름 수정");
+					System.out.println("2. 저장 번호 수정");
+					System.out.println("3. 새로운 번호 등록");
+					System.out.println("4. 종료");
+					System.out.println("---------------");
+					System.out.println("메뉴 선택 : ");
+					
+					
+					//서브메뉴 선택
+					int subMenu = scan.nextInt();
+					
+					
+					//서브메뉴 실행
+					switch (subMenu) {
+					//1. 이름 직장 수정
+					case 1:
+						//이름 직장 입력
+						System.out.println("이름 또는 직장 입력 : ");
+						scan.nextLine(); //엔터처리
+						name = scan.nextLine();
+						//입력한 정보와 일치하는 객체를 가져옴
+		//				fineNumList(list,name);
+								
+						
+						for(PhoneNum tmp : list) {
+							if(tmp.getName().contains(name)) { //완전 일치는 equals 일부만 같은건 contains
+							System.out.println(tmp);
+							}
+							else {
+								System.out.println("등록되지 않은 이름입니다");
+							}
+						}	
+						
+						//이름 직장 수정
+						break;
+						//2. 기존 전화번호 수정
+					case 2:
+						//기존 전화번호를 출력
+						System.out.println("전화번호 입력: ");
+						scan.nextLine(); //엔터처리
+						name = scan.nextLine();
+						
+						//수정할 전화번호를 선택
+						for(PhoneNum tmp : list) {
+							if(tmp.getNum().contains(num)) { //완전 일치는 equals 일부만 같은건 contains
+							System.out.println(tmp);
+							}
+							else {
+								System.out.println("등록되지 않은 이름입니다");
+							}
+						}	
+						//이름, 번호를 입력
+						
+						//선택할 이름 번호를 수정
+						break;
+						//3. 새 전화번호 추가
+					case 3:
+						//이름 번호를 입력
+						
+						//새 전화번호를 추가
+						
+						break;
+					case 4:
+						System.out.println("수정 종료");
+						break;
+					default:
+						System.out.println("잘못된 입력입니다");
+					}
+					
+					break;	
+				} while (menu2 != 4);		
+
+			//3. 번호 삭제
+				// 이름을 입력
+				
+				// 이름이 포함된 전화번호부를 검색하여 출력(번호와 함께)
+				
+				//수정할 전화번호를 선택
+				
+				//전화번호를 삭제
+			case 3:
+				System.out.println("삭제기능 구현 예정");
+				break;
+				
+			//4. 번호 조회
+				// 이름을 입력
+				
+				// 이름이 포함된 전화번호부를 검색하여 출력(번호와 함께)
+				
+				//조회할 전화번호부 선택
+>>>>>>> Stashed changes
 				
 			}else {
 				System.out.println("전화번호를 수정하지 못했습니다");
@@ -178,6 +319,7 @@ public class PhoneListMain {
 		return false;
 	}
 
+<<<<<<< Updated upstream
 
 
 	private static boolean deletePhoneBook(ArrayList<PhoneBook> list, index) {
@@ -246,7 +388,31 @@ public class PhoneListMain {
 			System.out.println("더 입력하겠습니까?(y/n) : ");
 		}while(scan.nextLine().charAt(0) != 'n');
 		return pnList;
+=======
+	private static void printMenu() {
+		System.out.println("-----메뉴-----");
+		System.out.println("1. 전화번호 추가");
+		System.out.println("2. 전화번호 수정");
+		System.out.println("3. 전화번호 삭제");
+		System.out.println("4. 전화번호 조회");
+		System.out.println("5. 프로그램 종료");
+		System.out.println("-------------");
+		System.out.println("메뉴선택 : ");
+		
+>>>>>>> Stashed changes
 	}
+
+
+
+
+//	private static void fineNumList(ArrayList<PhoneNum> list, String name) {
+//		ArrayList<PhoneNum> list = new ArrayList<PhoneNum>();
+//		for(int i =0; i <list.size();i++) {
+//			if(list.get(i).contains(name)) {
+//				list.add(i);
+//			}
+//		}
+//	}
 	
 	private static boolean insertPhoneBook(ArrayList<PhoneBook> list) {
 		//성명 , 직장 입력

@@ -5,17 +5,17 @@ import lombok.Data;
 @Data
 public class PhoneNum {
 
-	String name, pNum;
+	String name, num;
 
 	@Override
 	public String toString() {
-		return "["+name + ":" + pNum + "]";
+		return "["+name + ":" + num + "]";
 	}
 
-	public PhoneNum(String name, String pNum) {
+	public PhoneNum(String name, String num) {
 		super();
 		this.name = name;
-		this.pNum = pNum;
+		this.num = num;
 	}
 
 
