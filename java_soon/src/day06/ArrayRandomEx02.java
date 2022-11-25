@@ -18,8 +18,9 @@ public class ArrayRandomEx02 {
 			int r = (int)(Math.random()*(max - min + 1)+min);
 			
 			
-			boolean isDuplicated = false;
 			// 배열에 저장된 수 중에서 랜덤한 수와 일치하는 숫자가 있는지 없는지 확인
+			boolean isDuplicated = false; //초기화
+			
 			//저장된 숫자 개수만큼 반복 = > i는 0번지부터 저장된 개수보다 작을때까지
 			for(int i = 0; i< count; i++) {
 				//배열에 저장된 숫자갯수만큼 확인
