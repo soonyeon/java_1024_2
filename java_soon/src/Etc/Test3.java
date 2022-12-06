@@ -2,7 +2,7 @@ package Etc;
 
 import java.util.Scanner;
 
-public class Test02 {
+public class Test3 {
 
 	public static void sum(String[] args) {
 	//	public void sum() {
@@ -12,20 +12,15 @@ public class Test02 {
 		System.out.println("1 이상의 숫자를 입력하세요");
 		int num = sc.nextInt();
 		
+		int i;
 		int sum = 0;
-		if(num >= 0 ) {
-			int i = 1;
-			while(i <= num) {
+		for( i=1; i<=num; i++) {
+			if(num > 0) {
 				sum += i;
-				
-			}
-			System.out.println("1부터"+ num + "까지의 합은"+ sum + "입니다.");
-			
-		}else {
-			System.out.println("숫자가 1 이상이 아닙니다");
+			}else 
+				System.out.println("1이상입니다");
 		}
-	
-		
+		System.out.println(sum);
 	}
 
 }

@@ -1,4 +1,4 @@
-package day20;
+package Etc;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -11,7 +11,7 @@ public class StringEx01 {
 		 */
 		String str = "abcdefg";
 		System.out.println(str);
-		str = "hijklmn";
+		str = "heijkl";
 		System.out.println(str);
 		
 		
