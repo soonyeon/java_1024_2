@@ -15,8 +15,8 @@ public class Ex01_Server {
 		ServerSocket serverSocket = null;
 		
 		try {
-			serverSocket = new ServerSocket();
-			serverSocket.bind(new InetSocketAddress(5001));
+			serverSocket = new ServerSocket(); //1. 서버소켓을 만들고
+			serverSocket.bind(new InetSocketAddress("IP주소/ 도메인명",5001)); //2. 연결
 			System.out.println("[서버 시작]");
 			while(true) {
 				Socket socket = serverSocket.accept();
