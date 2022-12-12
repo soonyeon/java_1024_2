@@ -49,19 +49,19 @@ create table if not exists board(
 );
 -- drop table if exists buy;
 create table if not exists buy(
-	bu_num varchar(20) primary key, -- 구매 번호(결제 번호)
-    bu_state varchar(10) not null default '결제 완료', -- 구매 상태
-    bu_amount int not null default 1, -- 구매 수량
+	bu_num varchar(20) primary key, -- 구매 번호(결재 번호)
+    bu_state varchar(10) not null default '결재 완료', -- 구매 상태 
+    bu_amount int not null default 1, -- 구매 수량 
     bu_address varchar(50) not null, -- 배송지
-    bu_post_num char(10) not null, -- 우편번호
-    bu_me_id varchr(15) not null, -- 구매 아이디
+    bu_post_num varchar(10) not null, -- 우편번호 
+    bu_me_id varchar(15) not null, -- 구매 아이디 
     bu_pr_num int not null, -- 구매 제품 번호
-	constraint fk_bu_me_id
-		foreign key(bu_me_id)
-			references member(me_id),
-	constraint fk_bu_pr_num
-		foreign key(bu_pr_num)
-			references product(pr_num)
+    constraint fk_bu_me_id 
+		foreign key(bu_me_id) 
+        references member(me_id),
+	constraint fk_bu_pr_num 
+		foreign key(bu_pr_num) 
+        references product(pr_num)
 );
 -- drop table if exists inquiry;
 create table if not exists inquiry(
