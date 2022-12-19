@@ -1,5 +1,5 @@
-
-create database if not exists samll_jik; 
+drop database small_jik;
+create database if not exists small_jik; 
 	-- if not exists를 넣어줘야 여러번 실행해도 에러가 안뜸
 use small_jik;
 
@@ -54,7 +54,7 @@ create table if not exists basket(
     ba_me_id varchar(15) not null,
     ba_po_num int not null,
     foreign key(ba_me_id)references member(me_id),
-    foreign key(ba_po_id)references product_option(po_num)
+    foreign key(ba_po_num)references product_option(po_num)
 );
 create table if not exists `order`(
 	or_num int auto_increment primary key,
