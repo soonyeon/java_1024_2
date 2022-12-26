@@ -1,4 +1,4 @@
-package student;
+package example.student;
 
 import java.util.Scanner;
 
