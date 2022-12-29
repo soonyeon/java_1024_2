@@ -1,8 +1,10 @@
-package db.day3.vo;
+package db.day4.vo;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class CourseVO {
 	private int co_num;
 	private String co_st_num;
@@ -15,9 +17,4 @@ public class CourseVO {
 		this.co_le_num = co_le_num;
 		this.co_type = co_type;
 	}
-	
-
-
-	
-	
 }
