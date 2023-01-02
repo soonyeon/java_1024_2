@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>picture 태그 예제</title>
+</head>
+<body>
+	<!-- 
+	- 이미지 태그와 유사
+	- 이미지 태그로 구현 가능(css활용)
+	- 화면 크기에 따라 보여질 이미지를 다르게 선택
+	
+	source
+	- media : 화면 크기를 지정
+	-->
+	<!-- 
+		브라우저 가로가 1200px이상이면 fatcat.jpg를
+		브라우저 가로가 1200px미만이고 800px이상이면 fatcat2.jpg를
+		브라우저 가로가 800px 미만이면 cat.jpg를 화면에 출력
+	 -->
+<picture>
+	<source media="(mid-with:290px)" srcset="../img/fatcat.jpg">
+	<source media="(mid-with:270px)" srcset="../img/fatcat2.jpg">
+	<img src="../img/tiger.jpg" alt="타이거" width="300" height="auto">
+
+</picture>
+</body>
+</html>

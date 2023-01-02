@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>이미지 태그 예제</title>
+</head>
+<body>
+	<!-- 
+	with: 가로
+	hight: 높이
+	- 기본 픽셀 단위
+	-auto: 	비율에 맞게 크기를 조절. 보통 가로 또는 세로 하나만 지정한 후
+	다른 속성에 auto를 추가하여 이미지 비율이 깨지지 않게 함
+	 -->
+	<input type="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golde33443.jpg/280px-Golde33443.jpg" alt="강아지"><br>
+	<!-- 절대경로 : 최상위 폴더를 기준으로 경로를 탐색 
+	- root 폴더(최상위 폴더) :html
+	- /로 시작
+	- 최상위 폴더가 바뀌면 문제가 됨
+	-->
+	<input type="image" src="/img/dog.jpg"alt="강아지"><br>
+	<!-- 
+		상대경로: 현재파일 위치를 기준으로 탐색
+		최상위 폴더가 바뀌어도 문제가 안됨
+		- .. : 상위 폴더로 이동
+		- ./: 현재폴더
+	 -->
+	 <input type="image" src="../img/dog.jpg" alt="강아지"><br>
+	 <img width="300" height="300" src="../img/dog.jpg" alt="강아지">
+
+</body>
+</html>
