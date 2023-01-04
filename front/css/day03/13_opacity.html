@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>투명도 예제</title>
+	<style>
+		.container-box{
+			height: 500px; background: yellow;
+			padding: 100px;
+			/* opacity: 0.5;    부모가 투명해지면 자식도 투명해짐*/
+		}
+		.box{
+			height: 100px; background: green;
+			opacity:0.2; font-size: 50px; /*폰트도 같이 투명해짐*/
+		}
+	</style>
+</head>
+<body>
+	<div class="container-box">
+		<div class="box">hello</div>
+	</div>
+</body>
+</html>
