@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NAVER</title>
+	<style>
+			* { margin: 0; padding: 0;}
+		ul,ol{ list-style: none;}
+		a{	text-decoration: none;}
+		#body{ 
+			min-width: 1190px;
+			font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+			line-height: 16px; font-size: 12px; color: #202020;
+		}
+		.inner-container{ 
+			width: 1130px; margin: 0 auto; padding: 0 30px;
+		}
+		.box-search{
+			position: relative;
+		}
+		.box-search .box-service{
+			position: absolute; right: -3px; top: 12px;
+		}
+		.box-search .link-start-page{
+			font-size: 11px; color:#404040; float:left;
+		}
+		.box-search .link-start-page:hover{
+			text-decoration: underline;
+		}
+		.box-search .link-start-page::after{
+			content: ''; width:26px; height:26px; display: inline-block;
+			background-position: -382px -213px;
+			vertical-align: top; margin: -3px 0 0 3px;
+		}
+
+
+		.box-search .link-jrnaver{
+			float: left;
+		}
+		.box-search .link-jrnaver .icon-jrnaver{
+			width: 60px; height: 10px; background-position: -264px -296px;
+			display: inline-block; vertical-align: top;
+			margin: 3px;
+		}
+		.box-search .link-jrnaver:hover .icon-jrnaver{
+			background-position: -326px -296px;
+		}
+		.box-search .icon-bar{
+			float:left; width: 1px; height: 10px; margin:3px 7px;
+			background: #e4e8eb;
+		}
+		.box-search .link-happybin .ico-happybin{
+			width:34px; height: 11px; background-position: -365px -245px;
+			display: inline-block; vertical-align: top;
+			margin: 3px 3px 2px
+		}
+		.box-search .link-happybin:hover .ico-happybin{
+			background-position: -380px -199px;
+		}
+		.box-search{ height: 160px;}
+
+		.box-search .box-search-area{
+			position: absolute; top:50%; left: 238px; 
+			margin-top: -28px;
+		}
+
+		.box-search .form-search{
+			position: relative;
+			width:  582px; height: 52px;
+			border: 2px solid #19ce60;
+			border-radius: 2px;
+		}
+		.box-search .input-search{
+			width: 444px; height: 24px; padding: 13px 15px; margin: 1px;
+			background-color: #fff; font-size: 18px; line-height: 24px;
+			color: #000; font-weight: bold; outline: 0;
+		}
+
+		.box-search .btn-search{
+			position: absolute; top:0; right: 0; bottom: 0;
+			width: 56px; background-color: #19ce60;
+			background-color: #6399de;
+			border: 0; outline: 0;
+			border-radius: ;
+		}
+
+
+
+
+
+
+
+
+
+
+		.blind{
+			position:absolute;
+			width: 1px; height: 1px; margin: -1px; overflow: hidden;
+		}
+		.img1::after, .icon-jrnaver.img1, .ico-happybin.img1{
+			background: url(img/img1.png);
+			background-size: 442px 428px;
+		}
+
+		.icon-search.img1{
+			background: url(img/img1.png);
+		}
+		/*
+		.search-container{
+			position: relative;
+			width:  582px; height: 52px;
+			border: 2px solid green;
+			border-radius: 2px;
+		}
+		.box-search .kbd-btn .ico-kbd-btn{
+			position: absolute; top:50%; left: 50%; display: inline-block;
+			width: 20px; height: 12px; background-position: -398px -267px;
+			background-repeat: no-repeat; vertical-align: top; margin: -6ox 0 0 -10px;
+		}
+		*/
+	</style>
+</head>
+<body>
+	<div id="body">
+		<div class="container-search">
+			<div class="inner-container">
+				<div class="box-search">
+					<div class="box-service">
+						<a href="#" class="link-start-page img1">네이버를 시작페이지로</a>
+						<i class="icon-bar"></i>
+						<a href="#" class="link-jrnaver">
+							<i class="icon-jrnaver img1"></i>
+							<span calss="blind"></span>
+						</a>
+						<a href="#" class="link-happybin">
+							<i class="ico-happybin img1"></i>
+							<span calss="blind"></span>
+						</a>
+						</div>
+					</div>
+					<!-- 우측상단 서비스 페이지 구현 완료 -->
+					<div class="box-search-area">
+						<form action="" class="form-search">
+							<input type="text" class="input-search">
+							<button class="btn-search"></button>
+								<i class="icon-search img1"></i>
+								<span class="blind">검색</span>
+							<a href="#" class="icon-kbd"></a>
+							<a href="#" class="icon-auto-complete"></a>
+						</form>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-menu">
+		</div>
+		<div class="container-body">
+		</div>
+		<div class="container-footer">
+		</div>
+	</div>
+</body>
+</html>
