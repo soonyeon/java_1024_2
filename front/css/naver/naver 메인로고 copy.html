@@ -17,6 +17,7 @@
 		}
 		.inner-container{ 
 			width: 1130px; margin: 0 auto; padding: 0 30px;
+			box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%);
 		}
 		.box-search{
 			position: relative; height: 160px;
@@ -42,19 +43,6 @@
 			width: 60px; height: 10px; background-position: -264px -296px;
 			display: inline-block; vertical-align: top;
 			margin: 3px; 
-		}
-
-		.logo-area .link-area{	
-			float: right;
-		}
-		.logo-area .link-area .icon-naver{
-			display: inline-block;
-			width: 222px;
-			height: 52px;
-			background-position: 0 -158px;
-			background-repeat: no-repeat;
-			vertical-align: top;
-			content: '';
 		}
 		.box-search .link-jrnaver:hover .icon-jrnaver{
 			background-position: -326px -296px;
@@ -120,17 +108,85 @@
 			margin: -6px 0 0 -10px;
 		}
 
+		.box-search .icon-naver-logo{
+			width: 222px; height: 52px; background-position: 0 -158px;
+			display: inline-block; vertical-align: top;
+			margin-top: 48px;
+		}
+		.box-serach .link-naver .icon-naver-logo{
+			position: absolute; top: 50px; left: -9px;
+			
+		}
 
 
+		/* 폰트 */
+		.nav-item span{
+			color: #03c75a; display: block; 
+			font-size: 15px;
+			line-height: 30px;
+			font-weight: 700;
+			letter-spacing: -.3px;
+		}
+		.gnb-container{
+			width: 1190px; height: 52px;
+			position: relative;
+			box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%);
+			display: block;
+		}
+
+		
+		.gnb-inner .link-mail .icon-mail{
+			display: inline-block;
+			width: 21px;
+			height: 21px;
+			background-position: -420px -73px;
+			background-repeat: no-repeat;
+			vertical-align: top;
+			margin: 3px 9px 0 0;
+		}
+		.gnb-inner .link-shoppin-live .icon-shoppin-live{
+			width: 54px;
+			height: 20px;
+			background-position: -209px -267px;
+			background-repeat: no-repeat;
+			vertical-align: top;
+			content: '';
+			display: block;
+		}
+		.gnb-inner .link-tv .icon-tv{
+			display: inline-block;
+			width: 12px;
+			height: 14px;
+			background-position: -256px -212px;
+			background-repeat: no-repeat;
+			vertical-align: top;
+			margin: 9px 2px 0 0;
+		}
+		/* 메뉴 */
+		.group-menu>*{
+			margin: 10px; float:left;
+		}
+		.group-menu{
+			padding: 11px 270px 11px 0;
+		}
+
+		.nav-item{
+			list-style:none; margin-left: 12px;
+		}
+
+		/* 공통 */
+		.clearfix::after{
+			clear: both; display: block; content:'';
+		}
 
 		.blind{
 			position: absolute;
 			width: 1px; height: 1px;margin: -1px; overflow: hidden;
 		}
-
 		.img1::after, .icon-jrnaver.img1, .icon-happybean.img1,
 		.icon-search.img1,.icon-auto-complete.img1,
-		.icon-kbd.img1{
+		.icon-kbd.img1, .icon-naver-logo, .icon-mail.img1,
+		.icon-shopping-live.img1, .icon-tv.img1{
 			background-image: url(img/img1.png);
 			background-size: 442px 428px;
 		}
@@ -174,11 +230,65 @@
 						</form>
 					</div>
 					<!-- 검색창 구현 완료 -->
-					<div class="logo-area">
 						<a href="https://naver.com/" class="link-naver">
-							<i class="icon-naver img1"></i>
-							<span class="blind">네이버</span>
+							<i class="icon-naver-logo img1"></i>
+							<span class="blind">네이버 로고</span>
 						</a>	
+					<!-- 메인로고 구현 완료 -->
+				</div>
+			</div>
+			<div class="gnb-container">
+				<div class="gnb-inner">
+					<div class="group-nav">
+						<ul claa="list-nav-fix"></ul>
+							<li class="nav-item">
+								<a href="https://mail.naver.com" class="link-mail">
+									<i class="icon-mail img1"></i>
+									<span class="">메일</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://section.cafe.naver.com/" class="link-cafe">
+									<span class="">카페</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://section.blog.naver.com/" class="link-blog">
+									<span class="">블로그</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://kin.naver.com/" class="link-kin">
+									<span class="">지식iN</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://shopping.naver.com/" class="link-shopping">
+									<span class="">쇼핑</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://shoppinglive.naver.com/" class="link-shopping-live">
+									<i class="icon-shopping-live img1"></i>
+									<span class="blind">쇼핑라이브</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://order.pay.naver.com/" class="link-pay">
+									<i class="icon-pay img1"></i>
+									<span class="">pay</span>
+									<span class="">pay</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://tv.naver.com/" class="link-tv">
+									<i class="icon-tv img1"></i>
+									<span class="">tv</span>
+								</a>
+							</li>
+
+
+
 					</div>
 				</div>
 			</div>

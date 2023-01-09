@@ -17,6 +17,7 @@
 		}
 		.inner-container{ 
 			width: 1130px; margin: 0 auto; padding: 0 30px;
+			box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%);
 		}
 		.box-search{
 			position: relative; height: 160px;
@@ -42,19 +43,6 @@
 			width: 60px; height: 10px; background-position: -264px -296px;
 			display: inline-block; vertical-align: top;
 			margin: 3px; 
-		}
-
-		.logo-area .link-area{	
-			float: right;
-		}
-		.logo-area .link-area .icon-naver{
-			display: inline-block;
-			width: 222px;
-			height: 52px;
-			background-position: 0 -158px;
-			background-repeat: no-repeat;
-			vertical-align: top;
-			content: '';
 		}
 		.box-search .link-jrnaver:hover .icon-jrnaver{
 			background-position: -326px -296px;
@@ -120,17 +108,33 @@
 			margin: -6px 0 0 -10px;
 		}
 
+		.box-search .icon-naver-logo{
+			width: 222px; height: 52px; background-position: 0 -158px;
+			display: inline-block; vertical-align: top;
+			margin-top: 48px;
+		}
+		.box-serach .link-naver .icon-naver-logo{
+			position: absolute; top: 50px; left: -9px;
+			
+		}
+		/* 메뉴 */
+		.group-menu>*{
+			float:left
+		}
 
-
+		/* 공통 */
+		.clearfix::after{
+			clear: both; display
+		}
 
 		.blind{
 			position: absolute;
 			width: 1px; height: 1px;margin: -1px; overflow: hidden;
 		}
-
 		.img1::after, .icon-jrnaver.img1, .icon-happybean.img1,
 		.icon-search.img1,.icon-auto-complete.img1,
-		.icon-kbd.img1{
+		.icon-kbd.img1, .icon-naver-logo, .icon-mail.img1,
+		.icon-shopping-live.img1, .icon-tv.img1{
 			background-image: url(img/img1.png);
 			background-size: 442px 428px;
 		}
@@ -141,6 +145,8 @@
 <body>
 	<div id="body">
 		<div class="container-search">
+		</div>
+		<div class="container-menu">
 			<div class="inner-container">
 				<div class="box-search">
 					<div class="box-service">
@@ -174,18 +180,78 @@
 						</form>
 					</div>
 					<!-- 검색창 구현 완료 -->
-					<div class="logo-area">
 						<a href="https://naver.com/" class="link-naver">
-							<i class="icon-naver img1"></i>
-							<span class="blind">네이버</span>
+							<i class="icon-naver-logo img1"></i>
+							<span class="blind">네이버 로고</span>
 						</a>	
+					<!-- 메인로고 구현 완료 -->
+				</div>
+				<div class="box-menu">
+					<div class="group-menu clearfix">
+						<ul class="fix-menu-list">1</ul>
+						<ul class="favority-menu-list">2</ul>
+						<a href="#" class="btn-more">3</a>
 					</div>
+					<div class="group-weather"></div>
+				</div>
 				</div>
 			</div>
 		</div>
-		<div class="container-menu"></div>
 		<div class="container-body"></div>
 		<footer class="container-footer"></footer>
 	</div>
 </body>
 </html>
+
+
+<!-- 
+<div class="group-nav">
+						<ul claa="list-nav-fix"></ul>
+							<li class="nav-item">
+								<a href="https://mail.naver.com" class="link-mail">
+									<i class="icon-mail img1"></i>
+									<span class="">메일</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://section.cafe.naver.com/" class="link-cafe">
+									<span class="">카페</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://section.blog.naver.com/" class="link-blog">
+									<span class="">블로그</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://kin.naver.com/" class="link-kin">
+									<span class="">지식iN</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://shopping.naver.com/" class="link-shopping">
+									<span class="">쇼핑</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://shoppinglive.naver.com/" class="link-shopping-live">
+									<i class="icon-shopping-live img1"></i>
+									<span class="blind">쇼핑라이브</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://order.pay.naver.com/" class="link-pay">
+									<i class="icon-pay img1"></i>
+									<span class="">pay</span>
+									<span class="">pay</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://tv.naver.com/" class="link-tv">
+									<i class="icon-tv img1"></i>
+									<span class="">tv</span>
+								</a>
+							</li>
+
+
+ -->
