@@ -118,13 +118,16 @@
 
 
 		/* 메뉴바 */
+		.container-menu{
+			box-shadow: 0 1px 3px 0 rgba(0,0,0,0.12);
+			width:1190px; height:52px;
+		}
 		.group-menu>*{
 			float:left;
 		}
 		.group-menu{
 			padding: 11px 270px 11px 0;
 		}
-
 		.group-menu .fix-menu,
 		.group-menu .favority-menu{
 			float: left;
@@ -132,8 +135,6 @@
 		.nav-item{
 			list-style:none;
 		}
-
-
 		/* 고정메뉴 */
 		#fix-menu {
 			color: #03c75a; display: block; font-size: 15px;
@@ -146,7 +147,6 @@
 			position: relative;
 			display: block;
 		}
-
 		
 		.container-menu .link-mail .icon-mail{
 			display: inline-block;
@@ -165,6 +165,7 @@
 			vertical-align: top;
 			content: '';
 			display: block;
+			margin-top: 4px;
 			
 		}
 		.container-menu .link-shopping-live .icon-shopping-live{
@@ -175,13 +176,12 @@
 			vertical-align: top;
 			content: '';
 			display: block;
+			margin-top: 4px;
 		}
-
 		.group-menu .nav-item:nth-child(5),
 		.group-menu .nav-item:nth-child(6){
 			padding: 4px 0;
 		}
-
 		.container-menu .link-tv .icon-tv{
 			display: inline-block;
 			width: 12px;
@@ -191,14 +191,11 @@
 			vertical-align: top;
 			margin: 9px 2px 0 0;
 		}
-
 		/* 즐겨찾기 메뉴 */
 		.link-favority-menu{
 			color: #000; display: block; font-size: 15px; margin-left: 12px;
 			line-height: 30px;font-weight: 700; letter-spacing: -.3px;
 		}
-
-
 		/* 공통 */
 		.clearfix::after{
 			clear: both; display: block; content:'';
@@ -221,6 +218,7 @@
 </head>
 <body>
 	<div id="body">
+		<!-- 검색 박스 -->
 		<div class="container-search">
 			<div class="inner-container">
 				<div class="box-search">
@@ -238,8 +236,8 @@
 					</div>
 					<!-- 우측 상단 서비스 페이지 구현 완료 -->
 					<div class="box-search-area">
-						<form action="" class="form-search">
-							<input type="text" class="input-search">
+						<form action="https://search.naver.com/search.naver" class="form-search" method="get">
+							<input type="text" name="where" class="input-search">
 							<button class="btn-search">
 								<i class="icon-search img1"></i>
 								<span class="blind">검색</span>
@@ -261,6 +259,8 @@
 						</a>	
 					<!-- 메인로고 구현 완료 -->
 				</div>
+			</div>
+		</div>
 		<!-- 메뉴박스 -->
 		<div class="container-menu">		
 			<div class="inner-container">
@@ -340,7 +340,24 @@
 			</div>
 		</div>
 		<!-- 메뉴박스 완료 -->
-		<div class="container-body"></div>
+		<!-- 바디 박스 -->
+		<div class="container-body">
+			<div class="inner-container">
+				<!-- 바디 레프트 -->
+				<div class="box-body-left">
+					<div class="body-box-left1">
+						<iframe src="add2.html" frameborder="0"></iframe>
+						<span class="line line-top"></span>
+						<span class="line line-bottom"></span>
+						<span class="line line-left"></span>
+						<span class="line line-right"></span>
+					</div>
+				</div>
+				<!-- 바디 라이트 -->
+				<div class="box-body-right"></div>
+			</div>
+		</div>
+		<!-- 바디박스 완료 -->
 		<footer class="container-footer"></footer>
 	</div>
 </body>
