@@ -230,94 +230,7 @@
 		.box-body .line-right{
 			width: 1px; right: 0; bottom: 0; top: 0; 	
 		}
-						/* 메인 왼쪽 두번째 박스 */
-		.box-body .box-body-left2{
-			margin-top: 12px;
-		}
-		.box-body-left2 .box-head{
-			padding: 12px 15px 11px 15px;
-			background-color: #f7f9fa;
-			border: 1px solid #dae1e6;
-			line-height: 24px;
-		}
-		.box-body-left2 .box-head{
-			float:left;
-		}
-		.box-body-left2 .contents{
-			float:right;
-		}
-		.box-body-left2 .servic{
-			float:left;
-		}
-		.box-body-left2 .link-media{
-			float:left; font-weight: bold; font-size: 13px; letter-spacing: -.3px;
-			padding-right: 12px; margin-right: 7px; position:relative;
-
-		}
-		.box-body-left2 .link-media::after{
-			width: 11px; height: 11px;
-		}
-		/* 메인 오른쪽 첫번째 박스 */
-		.box-body-right1{
-			width:315px; height:105px;
-			padding: 16px 16px 12px 17px;
-			background-color: #f7f9fa;
-			border: 1px solid #dae1e6;
-		}
-		.box-body-right1 .box-title{
-			font-size: 12px; line-height: 16px; letter-spacing: -2px;
-			color: gray; padding-left: 3px;
-		}
-		.box-body-right1 .link-login{
-			display: block; padding:15px 0; 
-			font-size: 13; line-height:16px; text-align: center;
-			border-radius: 2px; background-color: #19ce60; border:#15c654;;
-			margin-top: 11px; color: #fff; font-weight: 700;
-		}
-
-		.box-body-right1 .icon-login{
-			width: 60px; height: 12px; display: inline-block;
-			background-position: -202px -296px;	vertical-align: top;
-			margin: 2px 5px 0 0;
-		}
-		.box-body-right1 .icon-id{
-			width: 10px; height: 14px; display: inline-block;
-			background-position: -408px -55px;	vertical-align: top;
-			margin: -1px 1px 1px;
-		}
-		.box-body-right1 .box-service{
-			margin: 14px 8px 0 4px; 
-		}
-		.box-body-right1 .link-find-id{	
-			float:left; letter-spacing: -.2px; color: #404040;
-			padding-right: 4px;
-		}
-		.box-body-right1 .link-id::before{	
-			width: 10px; height: 14px; display: inline-block;
-			background-position: -408px -55px;	vertical-align: top;
-			margin: -1px 1px 1px 0;
-		}
-		.box-body-right1 .link-find-pw{	
-			float:left;letter-spacing: -.2px; color: #404040;
-		}
-		.box-body-right1 .link-find-pw::before{	
-			width: 10px; height: 14px; display: inline-block;
-			vertical-align: 3px; border-radius: 50%; background-color: #d7dce0;
-			margin: 0px 5px 0px 2;
-		}
-		.box-body-right1 .link-signup{	
-			float:right; color: #505050;letter-spacing: -.2px;
-		}
-		.box-body-right1 .box-service>*:hover{
-			text-decoration: underline;
-		}
-		.box-body-right1 .link-find-pw::before{	
-			width: 11px; height: 14px; display: inline-block;
-			vertical-align: 3px; border-radius: 50%; background-color: #d7dce0;
-			margin: 2px 5px 0px 0px;
-		}
-
-
+		
 
 		/* 공통 */
 		.clearfix::after{
@@ -332,7 +245,7 @@
 		.icon-search.img1,.icon-auto-complete.img1,
 		.icon-kbd.img1, .icon-naver-logo.img1, .icon-mail.img1,
 		.icon-shpping.img1,.icon-shpping-live.img1,.icon-tv.img1,
-		.icon-more.img1,.icon-login.img1,.icon-id.img1,.box-body-right1 .link-find-id::before{
+		.icon-more.img1{
 			background-image: url(img/img1.png);
 			background-size: 442px 428px;
 		}
@@ -341,6 +254,7 @@
 </head>
 <body>
 	<div id="body">
+		<!-- 서치박스 -->
 		<div class="container-search">
 			<div class="inner-container">
 				<div class="box-search">
@@ -383,6 +297,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- 메뉴박스 -->
 		<div class="container-menu">
 			<div class="inner-container">
 				<div class="box-menu">
@@ -455,10 +370,11 @@
 				</div>
 			</div>
 		</div>
+		<!-- 바디박스 -->
 		<div class="container-body">
 			<div class="inner-container">
 				<div class="box-body clearfix">
-					<!-- 왼쪽 첫번째 박스 -->
+					<!-- 바디 왼쪽  -->
 					<div class="box-body-left">
 						<div class="box-body-left1">
 							<iframe src="add1.html" frameborder="0" class="frame"></iframe>
@@ -467,44 +383,29 @@
 							<span class="line line-left"></span>
 							<span class="line line-right"></span>
 						</div>
-						<!-- 왼쪽 두번째 박스 -->
-						<div class="box-bocy-left2">
-							<div class="box-head">
-								<div class="box-in clearfix">
-									<div class="box-contents">
-										<a href="#" class="link-media">연합뉴스</a>
-										<ul class="list-issue"></ul>
-									</div>
-									<div class="box-service">
-										<a href="#" class="link-news-home">뉴스홈</a>
-										<a href="#" class="link-entertain">연애</a>
-										<a href="#" class="link-sports">스포츠</a>
-										<a href="#" class="link-ecomic">경제</a>
-									</div>
-								</div>
-							</div>
-							<div class="box-title"></div>
-							<div class="box-bocy"></div>
-						</div>
 					</div>
-					<!-- 오른쪽 첫번째 박스 -->
+					<!-- 바디 오른쪽 -->
 					<div class="box-body-right">
 						<div class="box-body-right1">
-							<div class="box-in-right1">
-								<p class="box-title">네이버를 더 안전하고 편리하게 이용하세요</p>
-								<a href="#" class="link-login">
-									<i class="icon-login img1"></i>로그인
-								</a>
-								<div class="box-service">
-									<a href="#" class="link-find-id">
-										<i class="icon-id img1"></i>아이디
-									</a>
-									<a href="#" class="link-find-pw">비밀번호찾기</a>
-									<a href="#" class="link-signup">회원가입</a>
+							<div class="box-login">
+								<div class="box-login-msg">
+									<span>네이버를 더 안전하고 편리하게 이용하세요</span>
+								</div>	
+								<div class="box-login-greenbox"></div>
+									<a href="https://nid.naver.com/nidlogin.login">로그인</a>
+								<div class="box-login-sub">
+									<div class="id-serach">
+										<a href="https://nid.naver.com/user2/help/idInquiry.nhn?menu=idinquiry">아이디 찾기</a>
+									</div>
+									<div class="id-serach">
+										<a href="https://nid.naver.com/user2/help/pwInquiry.nhn?menu=pwinquiry">비밀번호 찾기</a>	
+									</div>		
+									<div class="join">
+										<a href="https://nid.naver.com/user2/V2Join?m=agree&lang=ko_KR&cpno=">회원가입</a>
+									</div>	
 								</div>
-							</div>
-						</div>	
-					</div>
+							</div>			
+						</div>
 				</div>
 			</div>
 		</div>
