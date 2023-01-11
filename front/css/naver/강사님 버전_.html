@@ -12,8 +12,8 @@
 		#body{ 
 			min-width: 1190px;
 			font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
-			line-height: 16px; font-size: 12px; color: #202020;
-			height: 1000px;
+			line-height: 16px; font-size: 12px; color: #202020; 
+			height: 1000px; 
 		}
 		.inner-container{ 
 			width: 1130px; margin: 0 auto; padding: 0 30px;
@@ -230,94 +230,87 @@
 		.box-body .line-right{
 			width: 1px; right: 0; bottom: 0; top: 0; 	
 		}
-						/* 메인 왼쪽 두번째 박스 */
-		.box-body .box-body-left2{
-			margin-top: 12px;
-		}
-		.box-body-left2 .box-head{
-			padding: 12px 15px 11px 15px;
-			background-color: #f7f9fa;
-			border: 1px solid #dae1e6;
-			line-height: 24px;
-		}
-		.box-body-left2 .box-head{
-			float:left;
-		}
-		.box-body-left2 .contents{
-			float:right;
-		}
-		.box-body-left2 .servic{
-			float:left;
-		}
-		.box-body-left2 .link-media{
-			float:left; font-weight: bold; font-size: 13px; letter-spacing: -.3px;
-			padding-right: 12px; margin-right: 7px; position:relative;
-
-		}
-		.box-body-left2 .link-media::after{
-			width: 11px; height: 11px;
-		}
+		
 		/* 메인 오른쪽 첫번째 박스 */
 		.box-body-right1{
-			width:315px; height:105px;
-			padding: 16px 16px 12px 17px;
+			padding: 16px 16px 12px 17px; border: 1px solid #dae1e6;
 			background-color: #f7f9fa;
-			border: 1px solid #dae1e6;
 		}
 		.box-body-right1 .box-title{
-			font-size: 12px; line-height: 16px; letter-spacing: -2px;
-			color: gray; padding-left: 3px;
+			font-size: 12px; line-height: 16px; letter-spacing: -.2px; color: gray;
+			padding-left: 3px;
 		}
 		.box-body-right1 .link-login{
-			display: block; padding:15px 0; 
-			font-size: 13; line-height:16px; text-align: center;
-			border-radius: 2px; background-color: #19ce60; border:#15c654;;
-			margin-top: 11px; color: #fff; font-weight: 700;
+			display: block; padding: 15px 0; font-size: 13px; text-align: center;
+			border-radius: 2px; background-color: #19ce60; border: 1px solid #15c654;
+			margin-top: 11px; font-weight: bold; color: #fff;
 		}
-
 		.box-body-right1 .icon-login{
 			width: 60px; height: 12px; display: inline-block;
 			background-position: -202px -296px;	vertical-align: top;
 			margin: 2px 5px 0 0;
 		}
-		.box-body-right1 .icon-id{
-			width: 10px; height: 14px; display: inline-block;
-			background-position: -408px -55px;	vertical-align: top;
-			margin: -1px 1px 1px;
-		}
 		.box-body-right1 .box-service{
-			margin: 14px 8px 0 4px; 
+			margin : 14px 8px 0 4px; letter-spacing: -.2px;
 		}
-		.box-body-right1 .link-find-id{	
-			float:left; letter-spacing: -.2px; color: #404040;
-			padding-right: 4px;
+		.box-body-right1 .link-find-id{
+			letter-spacing: -.2px; color: #404040;
 		}
-		.box-body-right1 .link-id::before{	
-			width: 10px; height: 14px; display: inline-block;
+		.box-body-right1 .box-service::before{
+			width: 10px; height: 14px; display: inline-block; content: '';
 			background-position: -408px -55px;	vertical-align: top;
-			margin: -1px 1px 1px 0;
+			margin: -1px 1px 1px; 
 		}
-		.box-body-right1 .link-find-pw{	
-			float:left;letter-spacing: -.2px; color: #404040;
+		.box-body-right1 .link-find-pw{
+			letter-spacing: -.2px; color: #404040;
 		}
-		.box-body-right1 .link-find-pw::before{	
-			width: 10px; height: 14px; display: inline-block;
-			vertical-align: 3px; border-radius: 50%; background-color: #d7dce0;
-			margin: 0px 5px 0px 2;
-		}
-		.box-body-right1 .link-signup{	
-			float:right; color: #505050;letter-spacing: -.2px;
+		.box-body-right1 .link-find-pw::before{
+			width: 3px; height: 3px; display: inline-block; content: ''; border-radius: 50%;
+			vertical-align: 3px; margin: 0px 5px 0px 2px; background-color: #d7dce0;
 		}
 		.box-body-right1 .box-service>*:hover{
 			text-decoration: underline;
 		}
-		.box-body-right1 .link-find-pw::before{	
-			width: 11px; height: 14px; display: inline-block;
-			vertical-align: 3px; border-radius: 50%; background-color: #d7dce0;
-			margin: 2px 5px 0px 0px;
+		.box-body-right1 .link-signup{
+			float: right; color: #505050; letter-spacing: -.2px;
+		}
+		.box-body-right1 .link-signup::before{
+			width: 11px; height: 11px; display: inline-block; content: '';
+			background-position: -401px -245px;	vertical-align: top;
+			margin: 2px 5px 0 0;
 		}
 
-
+		/* 메인 왼쪽 2번째 컨텐츠 */
+		.box-body .box-body-left2{
+			margin-top: 12px;
+		}
+		
+		.box-body-left2 .box-head{
+			padding: 12px 15px 11px 15px; border: 1px solid #dae1e6; background-color: #f7f9fa;
+			line-height: 24px; 
+		}
+		.box-body-left2 .box-contents{
+			float: left;
+		}
+		.box-body-left2 .box-service{
+			float: right;
+		}
+		.box-body-left2 .link-media{
+			float: left; font-weight: bold; font-size: 13px; letter-spacing: -.3px;
+			padding-right: 12px; margin-right: 7px; position: relative; color: #000;
+		}
+		.box-body-left2 .link-media::after{
+			width: 6px; height: 10px; display: inline-block; content: '';
+			background-position: -262px -112px;	vertical-align: top;
+			position: absolute; top: 7px; right: 0;
+		}
+		.box-body-left2 .list-issue{
+			width: 310px; height: 24px; overflow: hidden;
+		}
+		.box-body-left2 .link-issue{
+			display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+			color: #202020; font-size: 13px; letter-spacing: -.2px;
+		}
 
 		/* 공통 */
 		.clearfix::after{
@@ -332,7 +325,10 @@
 		.icon-search.img1,.icon-auto-complete.img1,
 		.icon-kbd.img1, .icon-naver-logo.img1, .icon-mail.img1,
 		.icon-shpping.img1,.icon-shpping-live.img1,.icon-tv.img1,
-		.icon-more.img1,.icon-login.img1,.icon-id.img1,.box-body-right1 .link-find-id::before{
+		.icon-more.img1, .icon-login.img1,
+		.box-body-right1 .box-service::before,
+		.box-body-right1 .link-signup::before,
+		.box-body-left2 .link-media::after{
 			background-image: url(img/img1.png);
 			background-size: 442px 428px;
 		}
@@ -458,7 +454,6 @@
 		<div class="container-body">
 			<div class="inner-container">
 				<div class="box-body clearfix">
-					<!-- 왼쪽 첫번째 박스 -->
 					<div class="box-body-left">
 						<div class="box-body-left1">
 							<iframe src="add1.html" frameborder="0" class="frame"></iframe>
@@ -467,13 +462,20 @@
 							<span class="line line-left"></span>
 							<span class="line line-right"></span>
 						</div>
-						<!-- 왼쪽 두번째 박스 -->
-						<div class="box-bocy-left2">
+						<!-- 메인 왼쪽 첫번째 박스 -->
+						<div class="box-body-left2">
 							<div class="box-head">
 								<div class="box-in clearfix">
 									<div class="box-contents">
 										<a href="#" class="link-media">연합뉴스</a>
-										<ul class="list-issue"></ul>
+										<ul class="list-issue">
+											<li class="item-issue">
+												<a href="#" class="link-issue">尹心? 여론? 중대 기로 나경원, '불출마 압박'에도 당권 도전하나</a>
+											</li>
+											<li class="item-issue">
+												<a href="#" class="link-issue">尹心? 여론? 중대 기로 나경원, '불출마 압박'에도 당권 도전하나</a>
+											</li>
+										</ul>
 									</div>
 									<div class="box-service">
 										<a href="#" class="link-news-home">뉴스홈</a>
@@ -484,10 +486,10 @@
 								</div>
 							</div>
 							<div class="box-title"></div>
-							<div class="box-bocy"></div>
+							<div class="box-body"></div>
 						</div>
 					</div>
-					<!-- 오른쪽 첫번째 박스 -->
+					<!-- 메인 왼쪽 박스 -->
 					<div class="box-body-right">
 						<div class="box-body-right1">
 							<div class="box-in-right1">
@@ -495,16 +497,16 @@
 								<a href="#" class="link-login">
 									<i class="icon-login img1"></i>로그인
 								</a>
-								<div class="box-service">
-									<a href="#" class="link-find-id">
-										<i class="icon-id img1"></i>아이디
-									</a>
+								<div class="box-service clearfix">
+									<a href="#" class="link-find-id"> 아이디 </a>
 									<a href="#" class="link-find-pw">비밀번호찾기</a>
 									<a href="#" class="link-signup">회원가입</a>
 								</div>
 							</div>
-						</div>	
+						</div>
+						<!-- 메인 오른쪽 첫번째 박스 -->
 					</div>
+					<!-- 메인 오른족 박스 -->
 				</div>
 			</div>
 		</div>
