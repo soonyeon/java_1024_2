@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>naver</title>
+    <style>
+        *{ margin:0; padding:0;}
+        .board{
+            min-width: 1190px;
+            font-size: 12px; line-height: 16px; color: #202020;
+            font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+        }
+        /* head */
+        .head-search{
+            height: 213px;
+        }
+        .head-search .box-search{
+            position: relative; height: 160px; background-color: #fff;
+            border-bottom: 1px solid #e4e8eb;
+        }
+        /* head-service */
+        .head-search .service-area{
+            position: absolute; top: 12px; right: 27px;
+        }
+        .head-search .set-home-btn{
+            float: left; font-size: 11px; color: #404040;
+            text-decoration: none; cursor: pointer;
+        }
+        .head-search .set-home-btn::after{
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+            background-position: -382px -213px;
+            background-repeat: no-repeat;
+            vertical-align: top;
+            content: '';
+            margin: -3px 0 0 3px;
+        }
+        .head-search .service-area .icon-bar{
+            float: left; width: 1px; height: 10px;
+            margin: 3px 7px; background-color: #e4e8eb;
+        }
+        .head-search .jrnaver-btn{
+            float: left;
+        }
+        .head-search .happybin-btn{
+            float: left; margin-left: 6px;
+        }
+        .head-search .jrnaver-btn .icon-jrnaver{
+            display: inline-block;
+            width: 60px;
+            height: 10px;
+            background-position: -264px -296px;
+            background-repeat: no-repeat;
+            vertical-align: top;
+            margin: 3px;
+        }
+        .head-search .happybin-btn .icon-happybean{
+            display: inline-block;
+            width: 34px;
+            height: 11px;
+            background-position: -365px -245px;
+            background-repeat: no-repeat;
+            vertical-align: top;
+            margin: 3px 3px 2px;
+        }
+        .head-search .set-home-btn:hover{
+            text-decoration: underline;
+        }
+        .head-search .jrnaver-btn:hover .icon-jrnaver{
+            background-position: -326px -296px;
+        }
+        .head-search .happybin-btn:hover .icon-happybean{
+            background-position: -380px -199px;
+        }
+        /* head-로고 */
+        .head-search .naver-logo{
+            position: absolute;
+            top: 50%;
+            left: -9px;
+            margin-top: -32px;
+        }
+        .head-search .naver-logo .icon-nave-logo{
+            display: inline-block;
+            width: 222px;
+            height: 52px;
+            background-position: 0 -158px;
+            background-repeat: no-repeat;
+            vertical-align: top;
+            content: '';
+        }
+        /* head-검색창 */
+        .head-search .green-window{
+            position: absolute;
+            top: 50%;
+            left: 268px;
+            margin-top: -28px;
+        }
+        .input-window{
+            
+        }
+
+        /* 공통 */
+        .blind{
+			position: absolute;
+			width: 1px; height: 1px;margin: -1px; overflow: hidden;
+		}
+        .set-home-btn::after,.icon-jrnaver.img1,.icon-happybean.img1,
+        .jrnaver-btn:hover .icon-jrnaver,.main-logo .naver-logo::before,
+        .icon-nave-logo.img1, .icon-kbd-btn.img1, .auto-comple-btn.img1{
+            background-image: url(img/img1.png);
+			background-size: 442px 428px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div calss="board">
+        <!-- head -->
+        <div class="head-search">
+            <div class="box-search">
+                <!-- 상단 서비스 영역 -->
+                <div class="service-area">
+                    <a href="https://help.naver.com/service/30016/contents/18042?osType=PC&lang=ko"class="set-home-btn">네이버를 시작페이지로</a>                     
+                    <i class="icon-bar img1"></i>
+                    <a href="https://jr.naver.com/" class="jrnaver-btn">
+                        <i class="icon-jrnaver img1"></i>
+                        <span class="blind">쥬니어네이버</span>
+                    </a>
+                    <a href="https://happybean.naver.com" class="happybin-btn">
+                        <i class="icon-happybean img1"></i>
+                        <span class="blind">해피빈</span>
+                    </a>
+                </div>
+                <!-- 로고 영역 -->
+                <div class="logo-area">
+                    <h1 class="main-logo"></h1>
+                        <a href="#" class="naver-logo">
+                            <i class="icon-nave-logo img1"></i>
+                            <span class="blind">네이버</span>
+                        </a>
+                </div>
+                <!-- 검색 영역 -->
+                <div class="search-area">
+                    <div class="green-window">
+                        <input type="text" class="input-window">
+                        <a href="#" class="kbd-btn">
+                            <i class="icon-kbd-btn img1"></i>
+                        </a>
+                        <a href="#" class="auto-complete">
+                            <i class="auto-comple-btn img1"></i>
+                        </a>
+                        <button class="search-btn"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-navi"></div>
+        </div>
+        <!-- body -->
+        <div class="body-menu">
+            <div class="box-menu">
+                <div class="menu-left"></div>
+                <div class="menu-right"></div>
+            </div>
+        </div>
+        <!-- foot -->
+        <div class="footer"></div>
+    </div>
+</body>
+</html>
