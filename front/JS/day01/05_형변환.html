@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>형변환</title>
+</head>
+<body>
+	<script>	
+		let num = 10;
+		let str = String(num);
+		console.log(`${str} :`+ typeof str);
+		str = '' + num;
+		console.log(`${str} :` +typeof str);
+		let num1 = Number(true);	
+		let num2 = Number(false);	
+		let num3 = Number(undefined);	
+		let num4 = Number(null);	
+		let num5 = Number('123.34');	
+		let num6 = Number('234,123');	
+		let num7 = Number('');
+		let num8 = Number('123.34'); //123
+		let num9 = Number('123.134'); //234 : 정수로 변환이 불가능한, 앞에있는 정수만 추출
+
+		console.log(`${num1} : ` + typeof num1);
+		console.log(`${num2} : ` + typeof num2);
+		console.log(`${num3} : ` + typeof num3);
+		console.log(`${num4} : ` + typeof num4);
+		console.log(`${num5} : ` + typeof num5);
+		console.log(`${num6} : `+ typeof num6);
+		console.log(`${num7} : ` + typeof num7);
+		console.log(`${num8} : ` + typeof num8);
+		console.log(`${num9} : ` + typeof num9);
+
+		consol.log(Boolean(2));		//true
+		consol.log(Boolean(0));		//false
+		consol.log(Boolean('0'));	//true
+		consol.log(Boolean(''));	//false
+		consol.log(Boolean('  '));	//true
+		consol.log(Boolean('Hello'));//true
+		consol.log(Boolean(0.0)); 	//false
+
+	</script>
+</body>
+</html>
