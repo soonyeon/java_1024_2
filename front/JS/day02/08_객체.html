@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>객체 예제</title>
+</head>
+<body>
+	<script>
+		/*
+		- 속성명은 변수도 될 수 있고, 메소드도 될 수 있다
+		let 객체명 = {
+			속성명1 : 값1,
+			속성명2: 값2,
+			...
+			속성명n : 값n
+		};
+
+		- 객체의 속성 사용 방법
+		객체명, 속성명
+		객체명[속성명]
+
+		- 객체 생성 이후 속성 추가하는 방법
+		객체명.속성명 = 값;
+
+		- 객체의 속성 삭제하는 방법
+		delete 객체명.속성명;
+		
+		- 객체에 원하는 속성이 있는지 없는지 확인하는 방법
+		'속성명' in 객체명
+		*/
+		let user = {
+			id : 'abc',
+			pw : 'qwe',
+			printHello : function(){
+				console.log('Hello')
+			}
+		}
+		consol.log(user.id);
+		consol.log(user['pw']);	//pw에 따옴표를 쳐야 변수로 취급하지 않는다
+		user.authority = 'user' ;
+		console.log(user);
+		user.printHello();
+		delete user.printHello;
+		console.log(user);
+		console.log(`'ptinyHello' in user : ${'printHello' in user}`)
+		/*
+		객체의 값을 반복문으로 확인하는 방법
+		for in 문, for of 문
+		for(변수명 in 객체명){
+			//이때 변수명은 속성값을 가져옴
+		}
+		for(변수명 of 객체명){
+			//이 때 변수명은 값을 가져옴
+		}
+		
+		*/
+	</script>
+</body>
+</html>
