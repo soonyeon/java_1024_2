@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 예제</title>
+    <style>
+        *{margin: 0px; padding: 0px;}
+        .container{
+            display: grid;
+            grid-template-columns: 80px 200px;
+            grid-template-rows: 40px 200px 40px;
+            grid-column-gap:1px;
+        }
+        .box{
+            border: 1px solid gray;
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <item class="box">box1</item>
+        <item class="box">box2</item>
+        <item class="box">box3</item>
+        <item class="box">box4</item>
+        <item class="box">box5</item>
+        <item class="box">box6</item>
+    </div>
+</body>
+</html>

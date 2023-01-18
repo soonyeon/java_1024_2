@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>공지사항 작성하기</title>
+	<style>
+		*{margin:0px; padding:0px;}
+		[class^=board-container]{
+			width:500px; border: 2px; margin:4px; background-color: aquamarine;
+			padding: 2px;
+		}
+		.board-container1{
+			display: grid;
+			grid-template-columns: 100px 200px;
+			grid-template-rows: 10px 200px 1px;	
+			border: 2px solid black;
+		}
+		legend{margin-left:10px}
+
+		.label-box{
+			width: 50px;
+		}
+		.input-box{
+			width: 200px; margin-right: 200px;
+		}
+	</style>
+</head>
+<body>
+	<form action="insert.no">
+		<fieldset class="board-container1">
+			<legend>공지사항 작성</legend>
+				<div class="label-box">
+					<label for="title">제목</label>
+					<label for="textarea">내용</label>
+					<label for="upload">첨부하기</label>
+				</div>
+				<div class="input-box">
+					<input type="text" name="title" placeholder="제목을 입력하시오." ><br>
+					<input  id="placeholder" type="text" name="content" placeholder="내용을 입력하시오." style="height:100px"><br>
+					<input type="submit" name="upload" value="파일첨부">선택된 파일 없음<br>
+					<button>작성하기</button>
+				</div>
+		</fieldset>
+	</form>
+	<hr>
+	<div class="board">
+		<div class="board-container2">
+			<div class="box1">번호</div>
+			<div class="box2">제목</div>
+			<div class="box3"></div>
+			<div class="box4">작성자</div>
+			<div class="box5">작성일</div>
+			<div class="box6">조회수</div>
+			<div class="box7">9</div>
+			<div class="box8"></div>
+			<div class="box9"></div>
+			<div class="box10"></div>
+			<div class="box11"></div>
+			<div class="box12"></div>
+			<div class="box13"></div>
+			<div class="box14"></div>
+			<div class="box15"></div>
+			<div class="box16"></div>
+			<div class="box17"></div>
+			<div class="box18"></div>
+			<div class="box19"></div>
+			<div class="box20"></div>
+			<div class="box21"></div>
+			<div class="box22"></div>
+			<div class="box23"></div>
+			<div class="box24"></div>
+			<div class="box25"></div>
+			<div class="box26"></div>
+			<div class="box27"></div>
+			<div class="box28"></div>
+			<div class="box29"></div>
+			<div class="box30"></div>
+			<div class="box31"></div>
+			<div class="box32"></div>
+			<div class="box33"></div>
+			<div class="box34"></div>
+			<div class="box35"></div>
+			<div class="box36"></div>
+			<div class="box37"></div>
+			<div class="box38"></div>
+			<div class="box39"></div>
+			<div class="box40"></div>
+			<div class="box41"></div>
+			<div class="box42"></div>
+		</div>
+	</div>
+</body>
+</html>
