@@ -9,7 +9,7 @@
 <body>
 	<script>
 		/*
-		.let 객체 = {
+		let 객체 = {
 			속성1 : 값,
 			속성2 : 값,
 			속성3 : {
@@ -21,16 +21,17 @@
 		객체.속성4.속성41 = 새로운값;
 		*/
 		let user = {
-			id : '123',
+			id : '123', 
+			pw : '345',
 			authority : {
-				name:'admin',
+				name : 'admin',
 				value : 10
 			}
 		}
 		user.authority.name = 'user';
 		user.authority.value = 9;
 		user.authority.code = 7;
-		user.name.firstName = '홍' ;
-	</script>
+		user?.name?.firstName = '홍';
+	</script>	
 </body>
 </html>
