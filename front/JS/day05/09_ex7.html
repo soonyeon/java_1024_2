@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px; height: 100px;
+            border: 2px solid black;
+            float: left;
+            margin: 1px;
+        }
+        .bg-color{
+            background-color: powderblue; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" onclick = "changeBackground(1);">1</div>
+        <div class="box" onclick = "changeBackground(2);">2</div>
+        <div class="box" onclick = "changeBackground(3);">3</div>
+    </div>
+    <script>
+        function changeBackground(index){
+            let list = document.querySelector('.container>.box');
+            list[index-1].classList.toggle('bg-color');
+        }
+    </script>
+</body>
+</html>
