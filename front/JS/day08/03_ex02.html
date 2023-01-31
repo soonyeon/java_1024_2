@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+    <style>
+        .box{
+            height: 100px; border: 1px solid black;
+            text-align: center; line-height: 100px; font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 버튼을 생성하고, 버튼을 클릭 했을 때 빈 박스에 Hello라는 글자가
+    출력되도록 코드를 작성
+        show()/ hide()/ toggle() : 
+            너비, 높이가 0,0 에서 지정된 값으로 변경. 너비 높이가 0이면 display : none
+        fadeIn()/fadeOut()/fadeToggle()/fadeTo()
+            투명도가 변경, 투명도 0이면 display : none
+        slideDown()/SlideUp()/SlideToggle()
+            놏이가 0에서 지정된 값으로 변경. 높이가 0이면 display: 
+    -->
+    <button class="btn">버튼</button>
+    <div class="box"></div>
+    <script>
+        // $('.btn').click(function(){
+        //     let text = 'Hello';
+        //     $('.box').text(text);
+        // });
+
+
+        $('.btn').click(function(){
+            
+            let text = 'Hello';
+            $('.box').text(text);
+            $('.box').show();
+        });
+        
+    </script>
+    
+
+</body>
+</html>
