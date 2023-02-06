@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="test/join" method="post" onsubmit="return validate();">
+    이름 : <input type="text" id="username" name="username" required><br>
+    비밀번호 입력 : <input type="password" id="userpwd" name="userpwd" required><br>
+    비밀번호 확인 : <input type="password" id="userpwd2" name="userpwd2" required><br>
+    <input type="submit" id="btn" value="전송">
+    </form>
+    <script>
+    function validate(){
+      let a = document.getElementById('username').value.length;
+      if(a<2){
+      alert('이름은 2글자 이상 입력하세요.');
+      return false;
+      } 
+      }
+  </script>
+</body>
+</html>

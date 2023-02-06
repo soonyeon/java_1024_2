@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">
+    <button id="b1">button1</button>
+    <button id="b2">button2</button>
+    <button id="b3">button3</button>
+    <button id="b4">button4</button>
+  </div>
+  <script>
+    const $btn = $('#btn button');
+    console.log($btn);
+
+      $btn.on('click',function(e){ //function(e)의 e는 event관련 object를 받는 argument
+
+        console.log('this :', this); //클릭한 버튼을 가리킴
+        console.log('$(this) :', $(this)); //버튼2 가리킴
+        console.log('e.target: ', e.target); //클릭한 버튼, 버튼마다 onclick과 같음
+        console.log('e.currentTarget : ', e.currentTarget);  //클릭한 버튼, 버튼마다 onclick과 같음
+
+        if($(this).attr('id')==='b1') //$(this)는 e.target을 가리킴
+          console.log('버튼2 제이쿼리 클릭!');
+
+      });
+    
+  </script>
+</body>
+</html>

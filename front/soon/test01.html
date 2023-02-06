@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; font-weight: nomal; font-size: 15px; text-align: center;}
+    table{margin: 20px;border: 1px solid gray;border-radius: 2px;}
+    .title{font-weight: bold;font-size: 25px;color: red;} 
+    thead{height:25px;font-weight: bold; color:white; background-color: red;}
+    tr{font-size: 14px;}
+    #floor{width:40px;} #room-name{width: 50px;} #quota{width: 40;} #price{width:165px}
+    .reservation{text-align: left;}
+    button{
+      margin-left: 5px;background-color: green; border-radius: 4px;
+      color: white;font-size: 12px;
+      box-shadow: none;
+    }
+    tfoot>tr>td{height: 25px;}
+    tbody{background-color: orange;}
+    tfoot{background-color: yellow;color: red;font-weight: bold;}
+    th,td{border: 1px solid gray;}
+  </style>
+</head>
+<body>
+  <table>
+    <caption class="title">kh리조트 대관 안내</caption>
+    <thead>
+      <tr>               
+        <th id="floor">층</th>
+        <th id="room-name">객실명</th>
+        <th id="quota">정원</th>
+        <th id="price">가격</th>
+      </tr>
+    </thead> 
+    <tbody>
+      <tr>
+        <td rowspan="6">2층</td>
+        <td rowspan="2">사랑방</td>
+        <td rowspan="2">4명</td>
+        <td class="reservation">평일 : 20,000원<button>예약하기</button></td>
+      </tr>
+      <tr>
+        <td class="reservation">주말 : 40,000원<button>예약하기</button></td>
+      </tr>
+      <tr>
+        <td rowspan="2">행복방</td>
+        <td rowspan="2">6명</td>
+        <td class="reservation">평일 : 20,000원<button>예약하기</button></td>
+      </tr>
+      <tr>
+        <td class="reservation">주말 : 40,000원<button>예약하기</button></td>
+      </tr>
+      <tr>
+        <td rowspan="2">코딩방</td>
+        <td rowspan="2">무제한</td>
+        <td class="reservation">평일 : 20,000원<button>예약하기</button></td>
+      </tr>
+      <tr>
+        <td class="reservation">주말 : 40,000원<button>예약하기</button></td>
+      </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">코딩방 예약시 커피 무제한 무료 증정</td>
+        </tr>
+      </tfoot>
+  </table>
+</body>
+</html>
