@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{margin: 0px; padding: 0px; text-align: center;}
+		.form{
+			width: 200px; height: 110px;
+			border: 1px solid black;
+			padding: 10px;margin: 10px;
+		}
+		.btn1{margin: 5px 0px 30px;}
+		.btn1,.btn2{padding: 0px; width: 173px;}
+		
+	</style>
+	<script src="jquery.min.js"></script>
+
+</head>
+<body>
+	<form action="" method="get" class="form">
+		<input type="text" class="id" placeholder="아이디"><br>
+		<button class="btn1">중복확인</button><br>
+		<button class="btn2">회원가입</button>
+	</form>
+	<script>
+		$('.btn1').click(function(){
+			let id = $('.id').val();
+			if(id.lengh==0){
+			alert('아이디는 5~8자로 입력바랍니다')
+			return false;
+			}
+		});
+	</script>
+</body>
+</html>
