@@ -25,6 +25,8 @@
 		}
 	</style>
 	<script src="../js/jquery.min.js"></script>
+
+	webContent/resources/js/jquery-3.5.1.min.js
 </head>
 <body>
 	<form action="" method="get" class="form">
@@ -49,11 +51,11 @@
 		*/
 		$('.form').submit(function(){
 			let id = $('[name=id]').val();
-			if(id.length == 0){
-				alert('아이디는 필수 항목입니다.');
-				$('[name=id]').focus();
-				return false;
-			}
+			// if(id.length == 0){
+			// 	alert('아이디는 필수 항목입니다.');
+			// 	$('[name=id]').focus();
+			// 	return false;
+			// }
 			let idRegex = /^[a-zA-Z0-9]{5,13}$/;
 			if(!idRegex.test(id)){
 				alert('아이디는 5~13자, 영문, 숫자만 가능합니다.');
@@ -61,29 +63,29 @@
 				return false;
 			}
 
-			let pw = $('[name=pw]').val();
-			if(pw.length == 0){
-				alert('비번은 필수 항목입니다.');
-				$('[name=pw]').focus();
-				return false;
-			}
-			let pwRegex = /^[a-zA-Z0-9!@#$%]{8,20}$/;
-			if(!pwRegex.test(pw)){
-				alert('비번은 8~20자, 영문, 숫자, !@#$%만 가능합니다.');
-				$('[name=pw]').focus();
-				return false;
-			}
-			let pw2 = $('[name=pw2]').val();
-			if(pw != pw2){
-				alert('비번과 비번 확인이 일치하지 않습니다.');
-				$('[name=pw]').focus();
-				return false;
-			}
-			if($('[name=gender]:checked').length == 0){
-				alert('성별은 필수 항목입니다.');
-				$('[name=gender]').focus();
-				return false;
-			}
+			// let pw = $('[name=pw]').val();
+			// if(pw.length == 0){
+			// 	alert('비번은 필수 항목입니다.');
+			// 	$('[name=pw]').focus();
+			// 	return false;
+			// }
+			// let pwRegex = /^[a-zA-Z0-9!@#$%]{8,20}$/;
+			// if(!pwRegex.test(pw)){
+			// 	alert('비번은 8~20자, 영문, 숫자, !@#$%만 가능합니다.');
+			// 	$('[name=pw]').focus();
+			// 	return false;
+			// }
+			// let pw2 = $('[name=pw2]').val();
+			// if(pw != pw2){
+			// 	alert('비번과 비번 확인이 일치하지 않습니다.');
+			// 	$('[name=pw]').focus();
+			// 	return false;
+			// }
+			// if($('[name=gender]:checked').length == 0){
+			// 	alert('성별은 필수 항목입니다.');
+			// 	$('[name=gender]').focus();
+			// 	return false;
+			// }
 		});
 	</script>
 </body>

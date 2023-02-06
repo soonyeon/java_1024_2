@@ -5,13 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .form{
+      border: 1px solid #000;
+      width: 500px; height: 400px;
+    }
+  </style>
 </head>
 <body>
-  <form action="test/join" method="post" onsubmit="return validate();">
-    이름  <input type="text" id="username" name="username" required>
+  <form action="" method="get" class="form">회원가입</form>
+    아이디 <input type="text" id="username" name="username" required>
     <input type="submit" id="btn" value="중복확인"><br>
-    비밀번호 입력  <input type="password" id="userpwd" name="userpwd" required><br>
-    비밀번호 확인  <input type="password" id="userpwd2" name="userpwd2" required><br>
+    비밀번호 입력 <input type="password" id="userpwd" name="userpwd" required><br>
+    비밀번호 확인 <input type="password" id="userpwd2" name="userpwd2" required><br>
     <div>
 			<label>
 				<input type="radio" name="region" value="서울"> 서울

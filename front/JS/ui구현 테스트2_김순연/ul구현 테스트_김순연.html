@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>회원가입</title>
+	<style>
+		*{margin: 0;padding: 0;font-size: 12px;}
+		.form{
+		width: 350px; border: 1px solid gray;
+		padding: 5px; margin: 10px;
+		}
+		input{
+			margin-top: 10px;
+		}
+		.btn1, .region{margin-left: 5px;}
+		
+		.btn-submit{margin-left: 2px;}
+		#input-box1{margin-left: 41.8px;}
+		#input-box2{margin-left: 30px;}
+		#input-box3{margin-left: 2px;}
+
+		#seoul{margin-left: 60px; margin-bottom: 10px;}
+		#btn2{margin-left: 110px;}
+	</style>
+	<script src="../js/jquery.min.js"></script>
+
+</head>
+<body>
+	<form action="" method="get" class="form">
+		<h1 class="title">회원가입</h1>
+		아이디<input type="text" name="id" id="input-box1" class="input-id"><button type="submit" class="btn-submit">중복확인</button><br>
+		비밀번호<input type="password" name="pw" id="input-box2"><br>
+		비밀번호 확인<input type="password" name="pw2" id="input-box3"><br>
+		<div>
+			<label>
+				지역<input type="radio" name="region" id="seoul" > 서울
+			</label>
+			<label>
+				<input type="radio" name="region" value="부산"> 부산
+			</label>
+			<label>
+				<input type="radio" name="region" value="대구"> 대구
+			</label>
+		</div>
+		<button type="submit" class="btn-submit1" id="btn2">초기화</button>
+		<button type="" class="btn-submit1">회원가입</button>
+
+	</form>
+	<script>
+		/* 
+		- 아이디는 5~13자, 영문, 숫자만 가능
+		- 비번은 8~20자, 영문, 숫자, !@#$%만 가능
+		*/
+		$('.form').submit(function(){
+			let id = $('[name=id]').val();
+			let idRegex = /^[a-z][A-Z0-9]{6,12}$/;
+			$('.input-id').css('background','green');
+			if(!idRegex.test(id)){
+				$('.input-id').css('background','red');
+				alert('아이디는 6~12자, 첫 글자 소문자, 영문, 숫자만 가능합니다.');
+				return false;
+			}
+			if($('[name=gender]:checked').length == 0){
+			alert('지역 필수 항목입니다.');
+			$('[name=gender]').focus();
+			return false;
+			}
+		});
+	</script>
+</body>
+</html>
