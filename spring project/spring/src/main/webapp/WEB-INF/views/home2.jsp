@@ -7,15 +7,10 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
-<!-- 
-필드 이름을 썻을 때 필드를 직접 호출하는게 아니라 getter를 호출 
-xxx.name을 쓰면 xxx.getName()이 호출된다
--->
-
-${id1,id},${pw1.pw}
-
+<form action="/spring/login" method="post">
+	<input type="text" name="id"><br>
+	<input type="password" name="pw"><br>
+	<button>로그인</button>
+</form>
 </body>
 </html>
