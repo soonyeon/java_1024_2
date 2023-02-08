@@ -10,14 +10,12 @@
 <h1>
 	Hello world!  
 </h1>
+<!-- 
+필드 이름을 썻을 때 필드를 직접 호출하는게 아니라 getter를 호출 
+xxx.name을 쓰면 xxx.getName()이 호출된다
+-->
 
-<P>  안녕하세요. 제 이름은 ${name1}입니다. </P>
-<P>  제 나이는 ${age}살 입니다. </P>
-<form action="/spring" method="post"><br>
-	<input type="text" name="name"><br>
-	<input type="text" name="age"><br>
-	<button>전송</button>
+${id1,id},${pw1.pw}
 
-</form>
 </body>
 </html>
