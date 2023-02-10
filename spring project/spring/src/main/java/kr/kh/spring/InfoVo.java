@@ -1,6 +1,7 @@
 package kr.kh.spring;
 
-public class InfoVo {
+
+public class InfoVO {
 	private String name;
 	private int num;
 	
@@ -18,13 +19,7 @@ public class InfoVo {
 	}
 	@Override
 	public String toString() {
-		return "InfoVo [name=" + name + ", num=" + num + "]";
+		return "InfoVO [name=" + name + ", num=" + num + "]";
 	}
-	public InfoVo(String name, int num) {
-		this.name = name;
-		this.num = num;
-	}
-
 	
-
 }
