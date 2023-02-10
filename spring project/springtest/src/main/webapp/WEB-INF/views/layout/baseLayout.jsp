@@ -11,17 +11,14 @@
 	<script src="<c:url value='/resources/js/popper.min.js'></c:url>"></script>
 	<script src="<c:url value='/resources/js/bootstrap.bundle.min.js'></c:url>"></script>
 	<style>
-		.container-body-container{
-		min-height:calc(100vh - 240px)
-		}
+		.body-container{min-height:calc(100vh - 240px);}
 	</style>
 </head>
 <body>
     <tiles:insertAttribute name="header"/>
-    <div class="container container-body-container" >        
-        <tiles:insertAttribute name="body"  />
+    <div class="container body-container">        
+        <tiles:insertAttribute name="body" />
     </div>                                                  
     <tiles:insertAttribute name="footer" />
 </body>
 </html>
-
