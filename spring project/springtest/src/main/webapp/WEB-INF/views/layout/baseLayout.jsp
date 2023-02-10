@@ -13,13 +13,13 @@
 	<style>
 		.container-body-container{
 		min-height:calc(100vh - 240px)
-		style="
+		}
 	</style>
 </head>
 <body>
     <tiles:insertAttribute name="header"/>
-    <div class="container" ">        
-        <tiles:insertAttribute name="body" class="container body_container" />
+    <div class="container container-body-container" >        
+        <tiles:insertAttribute name="body"  />
     </div>                                                  
     <tiles:insertAttribute name="footer" />
 </body>
