@@ -1,4 +1,4 @@
-package kr.kh.spring;
+package kr.kh.test2.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

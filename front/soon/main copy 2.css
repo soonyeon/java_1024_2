@@ -1,0 +1,29 @@
+*{margin: 0; padding: 0;}
+.container{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  grid-template-rows: 742px 75px 75px 75px;
+  grid-gap: 2px;
+}
+
+.article{
+  border: 1px solid black;
+  border:1px solid black;
+  text-align: center;
+} 
+.article1{
+  grid-column: 1/-1;
+  height: 742px;
+  
+}
+.article2{
+  grid-row: 2/7;
+}
+.article3{
+  grid-column: 2/6;
+  grid-row: 2/7;
+}
+
+.article6{
+  grid-row:2/7;
+} 

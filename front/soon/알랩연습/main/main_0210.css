@@ -1,0 +1,23 @@
+*{margin: 0; padding: 0;}
+body{
+  display: grid;
+  grid-auto-columns: minmax(1920,auto);
+  background-color: red;
+  text-align: center;
+  font-size: 100px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1420px 1fr;
+  grid-template-rows: 747px 800px 270px 600px; 
+  grid-gap: 5px;
+}
+
+section{
+  border: 5px solid black;
+  background-color: powderblue;
+}
+.main_area, .bar_area{
+  grid-column: 1/-1;
+}
