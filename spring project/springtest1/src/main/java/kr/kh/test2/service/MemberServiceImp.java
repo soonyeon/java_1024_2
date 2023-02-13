@@ -8,9 +8,9 @@ import kr.kh.test2.dao.MemberDAO;
 @Service
 public class MemberServiceImp implements MemberService {
 
-//	@Autowired
-//	MemberDAO memberDao;
-//
+	@Autowired
+	MemberDAO memberDao;
+
 //	@Override
 //	public String selectMemberName(Integer num) {
 //		if(num == null)
