@@ -5,6 +5,7 @@
  <!doctype html>
 <html>
 <head>
+<!-- 부트스트랩 -->
 	<title>스프링</title>
 	<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'></c:url>">
 	<script src="<c:url value='/resources/js/jquery.min.js'></c:url>"></script>
