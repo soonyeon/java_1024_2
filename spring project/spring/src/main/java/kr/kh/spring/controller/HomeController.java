@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.kh.spring.service.MemberService;
-import kr.kh.spring.service.MemberServiceImp;
+import kr.kh.spring.vo.MemberOKVO;
+import kr.kh.spring.vo.MemberVO;
 
 
 @Controller
@@ -22,14 +23,56 @@ public class HomeController {
 		mv.setViewName("/main/home");
 		return mv;
 	}
-	
 	@RequestMapping(value = "/signup", method=RequestMethod.GET)
 	public ModelAndView signup(ModelAndView mv) {
 		mv.setViewName("/member/signup");
 		return mv;
 	}
+	@RequestMapping(value = "/signup", method=RequestMethod.POST)
+	public ModelAndView signupPost(ModelAndView mv, MemberVO member) {
+		boolean isSignup = memberService.signup(member);
+		if(isSignup) {
+			
+			//아이디가 주어지면 주어진 아이디의 인증 번호를 발급하고
+			//발급한 인증 번호를 DB에 저장하고, 이메일로 인증 번호가 있는 링크를 전송하는 기능
+			memberService.emailAuthentication(member.getMe_id(), member.getMe_email());
+			mv.setViewName("redirect:/");
+		}else {
+			mv.setViewName("redirect:/signup");
+		}
+		return mv;
+	}
+	@RequestMapping(value = "/email", method=RequestMethod.GET)
+	public ModelAndView emial(ModelAndView mv,MemberOKVO mok) {
+		System.out.println("인증정보 :"+ mok);
+		if(memberService.emailAuthenticationConfirm(mok)) {
+			System.out.println("인증성공");
+		}else {
+			System.out.println("인증실패");
+		}
+		
+		mv.setViewName("redirect:/");
+		return mv;
+	}
 	
-
+	@RequestMapping(value = "/login", method=RequestMethod.GET)
+	public ModelAndView login(ModelAndView mv) {
+		mv.setViewName("/member/login");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/login", method=RequestMethod.POST)
+	public ModelAndView loginpost(ModelAndView mv, MemberVO member) {
+		MemberVO user = memberService.login(member);
+		mv.addObject("user",user);
+		if(user != null)
+			mv.setViewName("redirect:/");
+		else
+			mv.setViewName("redirect:/login");
+		System.out.println("user");
+		return mv;
+	}
+	
 	
 	@RequestMapping(value = "/ex1")
 	public ModelAndView ex1(ModelAndView mv,String name, Integer age) {
@@ -70,12 +113,5 @@ public class HomeController {
 		mv.setViewName("/main/ex4");
 		return mv;
 	}
-	@RequestMapping(value = "/ex5")
-	public ModelAndView ex5(ModelAndView mv, String num) {
-		String name = memberService.getNameByNum(num);
-		mv.addObject("name",name);
-		mv.addObject("num",num);
-		mv.setViewName("/main/ex5");
-		return mv;
-	}
+
 }

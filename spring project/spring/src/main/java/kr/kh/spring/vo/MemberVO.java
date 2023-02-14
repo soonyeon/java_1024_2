@@ -15,6 +15,7 @@ public class MemberVO {
 	int me_authority;
 	Date me_join_time;
 	
+	//문자열로 받아오기 때문에 날짜로 변환해주는 기능
 	public void setMe_birthday(String str) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		try {
