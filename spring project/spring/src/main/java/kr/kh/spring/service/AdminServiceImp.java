@@ -22,13 +22,21 @@ public class AdminServiceImp implements AdminService {
 
 	@Override
 	public boolean insertBoardType(BoardTypeVO bt) {
-		if(bt == null)
+		if(bt == null || bt.getBt_name().trim().length() == 0)
 			return false;
 		try {
 			return boardDao.insertBoardType(bt);
 		}catch(Exception e) {
 			return false;
 		}
+	}
+	@Override
+	public boolean updateBoardType(BoardTypeVO bt) {
+		if(bt == null)
+			return false;
+		return boardDao.updateBoardType(bt);
+
+		
 	}
 
 }
