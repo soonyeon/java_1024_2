@@ -1,5 +1,7 @@
 package kr.kh.test.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +38,6 @@ public class HomeController {
 			//실패했다고 알림 메세지(추후 구현 예정)
 			mv.setViewName("redirect:/signup");
 		}
-		
 		return mv;
 	}
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -44,35 +45,22 @@ public class HomeController {
 		mv.setViewName("/member/login");
 		return mv;
 	}
-//	@RequestMapping(value = "/login", method = RequestMethod.GET)
-//	public ModelAndView loginPost(ModelAndView mv, MemberVO member) {
-//		System.out.println("member");
-//		mv.setViewName("/member/login");
-//		return mv;
-//	}
-	//확인되면 위에꺼 지우고 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView loginPost(ModelAndView mv, MemberVO member) {
-		MemberVO
-		mv.setViewName("/member/login");
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView loginPost(ModelAndView mv,MemberVO member) {
+		MemberVO user = memberService.login(member);
+		mv.addObject("user", user);
+		if(user != null) {
+			mv.setViewName("redirect:/");
+		}else {
+			mv.setViewName("redirect:/login");
+		}
+		return mv;
+	}
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	public ModelAndView logoutPost(ModelAndView mv, HttpSession session) {
+		if(session != null)
+			session.removeAttribute("user");
+		mv.setViewName("redirect:/");
 		return mv;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
