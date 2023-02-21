@@ -1,6 +1,5 @@
 package kr.kh.test.controller;
 
-<<<<<<< Updated upstream
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.kh.test.service.MemberService;
+import kr.kh.test.vo.MemberVO;
 
 @Controller
 public class HomeController {
@@ -18,46 +18,61 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView home(ModelAndView mv, Integer num) {
 		String name = memberService.selectMemberName(num);
-		System.out.println(name);
 		mv.setViewName("/main/home");
 		return mv;
 	}
-=======
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-/**
- * Handles requests for the application home page.
- */
-@Controller
-public class HomeController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	public ModelAndView signup(ModelAndView mv) {
+		mv.setViewName("/member/signup");
+		return mv;
 	}
-	
->>>>>>> Stashed changes
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	public ModelAndView signupPost(ModelAndView mv, MemberVO member) {	
+		boolean res = memberService.signup(member);
+		if(res) {
+			//성공했다고 알림 메세지(추후 구현 예정)
+			mv.setViewName("redirect:/");
+		}else {
+			//실패했다고 알림 메세지(추후 구현 예정)
+			mv.setViewName("redirect:/signup");
+		}
+		
+		return mv;
+	}
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login(ModelAndView mv) {
+		mv.setViewName("/member/login");
+		return mv;
+	}
+//	@RequestMapping(value = "/login", method = RequestMethod.GET)
+//	public ModelAndView loginPost(ModelAndView mv, MemberVO member) {
+//		System.out.println("member");
+//		mv.setViewName("/member/login");
+//		return mv;
+//	}
+	//확인되면 위에꺼 지우고 
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView loginPost(ModelAndView mv, MemberVO member) {
+		MemberVO
+		mv.setViewName("/member/login");
+		return mv;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

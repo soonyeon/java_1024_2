@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-	
   <link href="<c:url value='/resources/css/summernote-bs4.min.css'></c:url>" rel="stylesheet">
   <script src="<c:url value='/resources/js/summernote-bs4.min.js'></c:url>"></script>
 <div class="container">
@@ -62,23 +61,23 @@ $('#type').change(function(){
 		$('#image').show();
 	}
 });
-$('form').submit(function)(){
+$('form').submit(function(){
 	let bo_bt_num = $('[name=bo_bt_num]').val();
-	if(bo_bt_num == 0){
-		alert('게시판을 선택하세요');
+	if(bo_bt_num  == 0){
+		alert('게시판을 선택하세요.');
 		$('[name=bo_bt_num]').focus();
-			return false;
+		return false;
 	}
 	let bo_title = $('[name=bo_title]').val();
-	if(bo_title.trim().length == 0){
-		alert('제목을 입력하세요');
+	if(bo_title.trim().length  == 0){
+		alert('제목을 입력하세요.');
 		$('[name=bo_title]').focus();
-			return false;
+		return false;
 	}
 	let bo_content = $('[name=bo_content]').val();
-	if(bo_content.trim().length == 0){
-		alert('내용을 입력하세요');
-			return false;
+	if(bo_content.trim().length  == 0){
+		alert('내용을 입력하세요.');
+		return false;
 	}
 }
 

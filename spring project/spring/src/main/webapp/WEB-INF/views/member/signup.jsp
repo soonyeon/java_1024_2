@@ -5,7 +5,6 @@
 label.error{color:red;}
 </style>
 <link rel="stylesheet" href="<c:url value='/resources/css/jqery-ui.min.css'></c:url>">
-<div class="container">
 	<h1>회원가입</h1>
 	<form action="<c:url value='/signup'></c:url>" method="post">
 		<div class="form-group">
@@ -26,15 +25,13 @@ label.error{color:red;}
 		</div>
 		<div class="form-group">
 			<label for="birthday">생년월일</label>
-			<input type="text" class="form-control" id="birthday" name="me_birthday">
+			<input type="text" class="form-control" id="birthday" name="me_birthday" placeholder="yyyy-mm-dd">
 		</div>
 		<button class="btn btn-outline-success col-12">회원가입</button>
-		
 	</form>
-</div>
+
 <script src="<c:url value='/resources/js/jquery.validate.min.js'></c:url>"></script>
 <script src="<c:url value='/resources/js/additional-method.min.js'></c:url>"></script>
-<script src="<c:url value='/resources/js/jquery-ui.min.js'></c:url>"></script>
 <script>
 	$('form').validate({
 		rules:{
