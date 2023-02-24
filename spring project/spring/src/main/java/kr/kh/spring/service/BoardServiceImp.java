@@ -48,10 +48,14 @@ public class BoardServiceImp implements BoardService {
 				board.getBo_content() == null|| board.getBo_content().trim().length() == 0)
 				return false;
 			
-
 			return true;
 		
 		
 	}
+	@Override
+	public ArrayList<BoardVO> getBoardList() {
+		return boardDao.selectBoardList();
+	}
+	
 	
 }
