@@ -3,7 +3,6 @@
     pageEncoding="UTF-8"%>
 <div class="container">
 	<h1>게시글 리스트</h1>
-
 	<table class="table table-hover">
 		<thead>
 			<tr>
@@ -20,7 +19,7 @@
 				<tr>
 					<td class="form-group">${bo.bo_num }</td>
 					<td class="form-group">
-						<a href="<c:url value='/board/detail'></c:url>">${bo.bo_title}</a>
+						<a href="<c:url value='/board/detail/${bo.bo_num}'></c:url>">${bo.bo_title}</a>
 					</td>
 					<td>${bo.bo_me_id}</td>
 					<td>${bo.bo_up}/${bo.bo_down}</td>
@@ -30,3 +29,14 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	
+	
+	
+	<c:if test="${user != null }">
+		<a href="<c:url value="/board/insert"></c:url>">
+			<button class="btn btn-outline-primary btn-ins">글쓰기</button>
+		</a>
+	</c:if>
+</div>
+

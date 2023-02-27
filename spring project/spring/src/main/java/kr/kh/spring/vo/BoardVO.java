@@ -14,18 +14,18 @@ public class BoardVO {
 	String bo_content;
 	Date bo_register_date;
 	Date bo_update_date;
-//	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
 	int bo_views;
 	int bo_up;
 	int bo_down;
 	int bo_ori_num;
 	String bo_me_id;
 	int bo_bt_num;
+	String bt_type;
+	String bt_name;
 	
 	public String getBo_register_date_str() {
 		SimpleDateFormat format = 
 			new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return format.format(bo_register_date);
 	}
-
 }

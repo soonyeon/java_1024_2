@@ -20,7 +20,7 @@ public class MemberServiceImp implements MemberService {
 	private JavaMailSender mailSender;
 	@Autowired
 	BCryptPasswordEncoder passwordEncoder;
-	
+
 	@Override
 	public boolean signup(MemberVO member) {
 		if(member == null)
@@ -91,7 +91,6 @@ public class MemberServiceImp implements MemberService {
 		if(mok == null)
 			return false;
 		MemberOKVO dbMok = memberDao.selectMemberOK(mok);
-		System.out.println("DB에서 가져온 인증정보 : "+ dbMok);
 		if(dbMok != null) {
 			//member_ok 테이블에서 해당 데이터를 삭제하고
 			memberDao.deleteMemberOK(mok);
@@ -104,19 +103,14 @@ public class MemberServiceImp implements MemberService {
 
 	@Override
 	public MemberVO login(MemberVO member) {
-		if(member == null  || member.getMe_id() == null
-				|| member.getMe_pw() == null)
+		if(member == null || member.getMe_id() == null 
+			|| member.getMe_pw() == null)
 			return null;
-		MemberVO dbmember = memberDao.selectMemberById(member.getMe_id());
-		if(dbmember == null)
+		MemberVO dbMember = memberDao.selectMemberById(member.getMe_id());
+		if(dbMember == null)
 			return null;
-		if(passwordEncoder.matches(member.getMe_pw(), dbmember.getMe_pw()))
-			return dbmember;
+		if(passwordEncoder.matches(member.getMe_pw(), dbMember.getMe_pw()))
+			return dbMember;
 		return null;
 	}
 }
-
-
-
-
-

@@ -2,8 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <div class="container">
-	<h1>게시글 타입 리스트</h1>   
-  <table class="table table-hover">
+	<h1>게시글 타입 리스트</h1>
+	<table class="table table-hover">
 		<thead>
 			<tr>
 				<th>번호</th>
@@ -15,7 +15,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${list}" var="bt" varStatus= "vs">
+			<c:forEach items="${list}" var="bt" varStatus="vs">
 				<tr>
 					<form action="<c:url value='/admin/board/type/update'></c:url>" method="post">
 						<td class="form-group">${bt.bt_num }<input type="hidden" name="bt_num" value="${bt.bt_num}"></td>
@@ -83,12 +83,12 @@
 </div>
 <script>
 $('.btn-del').click(function(){
-	let res = confirm('게시글 타입을 삭제하려면 해당 게시글 타입에 있는 모든 게시글 들이 삭제됩니다. \n 삭제하시겠습니까?');
+	let res = confirm('게시글 타입을 삭제하면 해당 게시글 타입에 있는 모든 게시글들이 삭됩니다.\n삭제하시겠습니까?');
 	if(!res)
 		return false;
 	//클릭된 삭제 버튼의 조상 중에 form태그를 찾아서 action부분을 수정
-	let url ='<c:url value="/admin/board/type/delete"></c:url>';
-	$(this).parents('tr').find('form').attr('action',url);
+	let url = '<c:url value="/admin/board/type/delete"></c:url>';
+	$(this).parents('tr').find('form').attr('action', url);
 });
 </script>
 

@@ -1,11 +1,11 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-  <link href="<c:url value='/resources/css/summernote-bs4.min.css'></c:url>" rel="stylesheet">
-  <script src="<c:url value='/resources/js/summernote-bs4.min.js'></c:url>"></script>
+<link href="<c:url value='/resources/css/summernote-bs4.min.css'></c:url>" rel="stylesheet">
+<script src="<c:url value='/resources/js/summernote-bs4.min.js'></c:url>"></script>
 <div class="container">
 	<h1>게시글 작성</h1>
-	<form action="<c:url value='/board/insert'></c:url>" method="post">
+	<form action="<c:url value='/board/insert'></c:url>" method="post" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="type">게시판:</label>
 			<select class="form-control" name="bo_bt_num" id="type">
@@ -87,8 +87,3 @@ let common = [];
 </c:forEach>
 
 </script>
-
-
-
-
-
