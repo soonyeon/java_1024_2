@@ -101,6 +101,7 @@ public class BoardController {
 		//res - 1: 추천, -1 : 비추천 : 0이면 취소
 		MemberVO user = (MemberVO)session.getAttribute("user");
 		int res = boardService.updateLikes(user, bo_num, li_state);
+		boardService.updateBoardByLikes(bo_num);
 		map.put("res", res);
 		return map;
 	}
@@ -131,15 +132,15 @@ public class BoardController {
 		//세션에 있는 회원 정보 가져옴. 작성자와 아이디가 같은지 확인하려고
 		MemberVO user = (MemberVO)session.getAttribute("user");
 		BoardVO board = boardService.getBoardByWriteAuthority(bo_num, user);
+		ArrayList<FileVO> files = boardService.getFileList(bo_num);
+		
 		if(board == null) {
 			MessageUtils.alertAndMovePage(response, 
 					"작성자가 아니거나 이미 삭제된 게시글입니다.", "/spring", "/board/list");
 		
 		}else {
 			mv.addObject("board", board);
-			
-			
-			
+			mv.addObject("files",files);
 			ArrayList<BoardTypeVO> btList = 
 					boardService.getBoardType(user.getMe_authority());
 			mv.addObject("btList", btList);
@@ -155,4 +156,29 @@ public class BoardController {
 		}
 		return mv;
 	}
+	
+	@RequestMapping(value = "/board/update/{bo_num}", method=RequestMethod.POST)
+	public ModelAndView boardUpdatePost(ModelAndView mv,
+			HttpSession session,
+			@PathVariable("bo_num")int bo_num,
+			HttpServletResponse response,
+			BoardVO board,//수정할 게시글 정보
+			MultipartFile []files,//추가된 첨부파일
+			int[] fileNums//삭제될 첨부파일
+			) {
+					
+		//세션에 있는 회원 정보 가져옴. 작성자와 아이디가 같은지 확인하려고
+		MemberVO user = (MemberVO)session.getAttribute("user");	
+		if(boardService.updateBoard(board,files,fileNums, user)) {
+			MessageUtils.alertAndMovePage(response, 
+					"게시글을 수정했습니다.", "/spring", 
+					"/board/detail/"+bo_num);
+		}else {
+			MessageUtils.alertAndMovePage(response, 
+					"게시글을 수정하지 못했습니다.", "/spring", 
+					"/board/list");
+		}
+		return mv;
+	}
+	
 }
