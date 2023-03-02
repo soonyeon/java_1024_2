@@ -19,7 +19,7 @@
 			<c:forEach items="${list}" var="bo" varStatus="vs">
 				<tr>
 					<td class="form-group">${bo.bo_num }</td>
-					<td>${bo.bt_name}</td>
+					<td>${bo.bt_name }</td>
 					<td class="form-group">
 						<a href="<c:url value='/board/detail/${bo.bo_num}'></c:url>">${bo.bo_title}</a>
 					</td>

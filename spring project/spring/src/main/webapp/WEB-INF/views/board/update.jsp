@@ -86,9 +86,9 @@ $('form').submit(function(){
 		return false;
 	}
 });
-// 게시판 타입이 일반인 게시판들의 기본키를 저장하는 common배열
+//게시판 타입이 일반인 게시판들의 기본키를 저장하는 common 배열
 let common = [];
-//게사판 타입이 일반인 게시판들의 기본키를 저장하는 작업
+//게시판 타입이 일반인 게시판들의 기본키를 저장하는 작업
 <c:forEach items="${btList}" var="bt">
 	<c:if test="${bt.bt_type == '일반'}">common.push('${bt.bt_num}')</c:if>
 </c:forEach>
@@ -104,5 +104,4 @@ $('.btn-times').click(function(e){
 	$('.files').append('<input type="hidden" name="fileNums" value="'+$(this).data('num')+'">');
 	$(this).parent().remove();
 });
-
 </script>

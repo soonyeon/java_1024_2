@@ -27,10 +27,16 @@ public class BoardServiceImp implements BoardService {
 		if(board == null || 
 			board.getBo_title() == null|| 
 			board.getBo_title().trim().length() == 0 ||
-			board.getBo_content() == null || 
+			board.getBo_content() == null )
+			return false;
+		BoardTypeVO bt = boardDao.selectBoardType(board.getBo_bt_num());
+		if(bt == null)
+			return false;
+		if(bt.getBt_type().equals("이미지"))
+			return true;
+		if( board.getBo_content() == null|| 
 			board.getBo_content().trim().length() == 0)
 			return false;
-		
 		return true;
 	}
 	
@@ -58,7 +64,6 @@ public class BoardServiceImp implements BoardService {
 			boardDao.insertFile(fileVo);
 		}
 	}
-	
 	private void deleteFileList(ArrayList<FileVO> fileList) {
 		if(fileList == null || fileList.size() == 0) 
 			return;
@@ -68,11 +73,8 @@ public class BoardServiceImp implements BoardService {
 			UploadFileUtils.removeFile(uploadPath, file.getFi_name());
 			boardDao.deleteFile(file);
 		}
-
+		
 	}
-	
-	
-	
 	
 	@Override
 	public ArrayList<BoardTypeVO> getBoardType(int authority) {
@@ -163,7 +165,7 @@ public class BoardServiceImp implements BoardService {
 	public LikesVO getLikes(int bo_num, MemberVO user) {
 		if(user == null)
 			return null;
-		return boardDao.selectLikesById(user.getMe_id(),bo_num);
+		return boardDao.selectLikesById(user.getMe_id(), bo_num);
 	}
 
 	@Override
@@ -171,15 +173,14 @@ public class BoardServiceImp implements BoardService {
 		if(user == null)
 			return false;
 		BoardVO board = boardDao.selectBoard(bo_num);
-		if(board ==null)
+		if(board == null)
 			return false;
 		//로그인한 사용자와 작성자가 다르면
 		if(!board.getBo_me_id().equals(user.getMe_id()))
 			return false;
-		ArrayList<FileVO>fileList = boardDao.selectFileList(bo_num);
+		ArrayList<FileVO> fileList = boardDao.selectFileList(bo_num);
 		deleteFileList(fileList);
-
-		return  boardDao.deleteBoard(bo_num) != 0;
+		return boardDao.deleteBoard(bo_num) != 0;
 	}
 
 	@Override
@@ -203,7 +204,6 @@ public class BoardServiceImp implements BoardService {
 			return false;
 		//게시글 정보를 가져옴
 		BoardVO dbBoard = boardDao.selectBoard(board.getBo_num());
-		
 		//가져온 게시글이 null인지 확인
 		if(dbBoard == null)
 			return false;
@@ -211,7 +211,7 @@ public class BoardServiceImp implements BoardService {
 		if(!dbBoard.getBo_me_id().equals(user.getMe_id()))
 			return false;
 		//다오에게 게시글 정보를 주면서 수정하라고 요청
-		if(boardDao.updateBoard(board)==0)
+		if(boardDao.updateBoard(board) == 0)
 			return false;
 		
 		//추가할 첨부파일을 업로드
@@ -220,56 +220,23 @@ public class BoardServiceImp implements BoardService {
 		//fileNums를 이용하여 첨부파일 객체를 가져와서 첨부파일 리스트에 추가
 		if(fileNums == null || fileNums.length == 0)
 			return true;
-			
+
 		ArrayList<FileVO> fileList = new ArrayList<FileVO>();
 		for(int fileNum : fileNums) {
 			FileVO fileVo = boardDao.selectFile(fileNum);
 			if(fileVo != null)
-			fileList.add(fileVo);
+				fileList.add(fileVo);
 		}
+		
 		//삭제 첨부파일 리스트를 이용하여 첨부파일 삭제
-		deleteFileList(null);
+		deleteFileList(fileList);
 		
-		//추가할 첨부파일을 업로드
-		uploadFiles(files, board.getBo_num());
+		
 		return true;
-		
 	}
 
 	@Override
 	public void updateBoardByLikes(int bo_num) {
 		boardDao.updateBoardByLikes(bo_num);
-		
 	}
-		
-		
-		
-
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
