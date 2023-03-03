@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.kh.spring.pagination.Criteria;
+import kr.kh.spring.pagination.PageMaker;
 import kr.kh.spring.service.BoardService;
 import kr.kh.spring.utils.MessageUtils;
 import kr.kh.spring.vo.BoardTypeVO;
@@ -32,11 +34,15 @@ public class BoardController {
 	BoardService boardService;
 	
 	@RequestMapping(value = "/board/list", method=RequestMethod.GET)
-	public ModelAndView boardList(ModelAndView mv) {
+	public ModelAndView boardList(ModelAndView mv, Criteria cri) {
 		//우선 전체 게시글을 가져오는 코드로 작성하고
 		//추후에 페이지네이션 및 검색 기능을 적용
-		ArrayList<BoardVO> list = boardService.getBoardList();
+		cri.setPerPageNum(2);
+		ArrayList<BoardVO> list = boardService.getBoardList(cri);
+		int totalCount = boardService.getBoardTotalCount(cri);
+		PageMaker pm = new PageMaker(totalCount, 3, cri);
 		mv.addObject("list",list);
+		mv.addObject("pm", pm);
 		mv.setViewName("/board/list");
 		return mv;
 	}
@@ -105,7 +111,6 @@ public class BoardController {
 		map.put("res", res);
 		return map;
 	}
-	
 	@RequestMapping(value = "/board/delete/{bo_num}", method=RequestMethod.GET)
 	public ModelAndView boardDelete(ModelAndView mv,
 			HttpSession session,
@@ -119,7 +124,7 @@ public class BoardController {
 					"게시글을 삭제했습니다.", "/spring", "/board/list");
 		}else {
 			MessageUtils.alertAndMovePage(response, 
-					"작성자가 아니거나 이미 삭제된 게시글입니다.", "/spring", 
+					"작성자가 아니거나 존재하지 않은 게시글입니다.", "/spring", 
 					"/board/detail/"+bo_num);
 		}
 		return mv;
@@ -136,11 +141,10 @@ public class BoardController {
 		
 		if(board == null) {
 			MessageUtils.alertAndMovePage(response, 
-					"작성자가 아니거나 이미 삭제된 게시글입니다.", "/spring", "/board/list");
-		
+					"작성자가 아니거나 존재하지 않은 게시글입니다.", "/spring", "/board/list");
 		}else {
 			mv.addObject("board", board);
-			mv.addObject("files",files);
+			mv.addObject("files", files);
 			ArrayList<BoardTypeVO> btList = 
 					boardService.getBoardType(user.getMe_authority());
 			mv.addObject("btList", btList);
@@ -148,27 +152,24 @@ public class BoardController {
 			//게시글 리스트로 이동시킴
 			if(btList.size() == 0) {
 				MessageUtils.alertAndMovePage(response, 
-						"권한이 없어서 작성할 수 있는 게시판이 없습니다.","/spring",
+						"권한이 없어서작성할 수 있는 게시판이 없습니다.", "/spring", 
 						"/board/list");
 			}else
 				mv.setViewName("/board/update");
-
 		}
 		return mv;
 	}
-	
 	@RequestMapping(value = "/board/update/{bo_num}", method=RequestMethod.POST)
 	public ModelAndView boardUpdatePost(ModelAndView mv,
 			HttpSession session,
 			@PathVariable("bo_num")int bo_num,
 			HttpServletResponse response,
-			BoardVO board,//수정할 게시글 정보
-			MultipartFile []files,//추가된 첨부파일
-			int[] fileNums//삭제될 첨부파일
+			BoardVO board,	//수정할 게시글 정보 
+			MultipartFile []files, //추가된 첨부파일
+			int [] fileNums //삭제될 첨부파일
 			) {
-					
 		//세션에 있는 회원 정보 가져옴. 작성자와 아이디가 같은지 확인하려고
-		MemberVO user = (MemberVO)session.getAttribute("user");	
+		MemberVO user = (MemberVO)session.getAttribute("user");
 		if(boardService.updateBoard(board,files,fileNums, user)) {
 			MessageUtils.alertAndMovePage(response, 
 					"게시글을 수정했습니다.", "/spring", 
@@ -180,5 +181,4 @@ public class BoardController {
 		}
 		return mv;
 	}
-	
 }
