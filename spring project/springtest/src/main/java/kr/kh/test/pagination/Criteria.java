@@ -1,4 +1,4 @@
-package kr.kh.spring.pagination;
+package kr.kh.test.pagination;
 
 import lombok.Data;
 
@@ -9,9 +9,9 @@ public class Criteria {
 	private int page; 
 	//한 페이지 당 컨텐츠 갯수
 	private int perPageNum;
-	//검색어
+	
 	private String search;
-	//게시판 번호
+	
 	private int type;
 	//Criteria 디폴트 생성자 : 현재 페이지를 1페이지로, 한 페이지에 10개의 컨텐츠
 	public Criteria() {
