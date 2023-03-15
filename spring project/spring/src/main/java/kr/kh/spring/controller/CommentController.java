@@ -4,6 +4,8 @@ package kr.kh.spring.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.kh.spring.service.BoardService;
 import kr.kh.spring.vo.CommentVO;
+import kr.kh.spring.vo.MemberVO;
 
 @Controller
 public class CommentController {
@@ -20,9 +23,12 @@ public class CommentController {
 	
 
 	@RequestMapping(value = "/comment/insert", method=RequestMethod.POST)
-	public Map<String, Object> boardList(@RequestBody CommentVO comment) {
+	public Map<String, Object> boardList(@RequestBody CommentVO comment,
+			HttpSession session) {
 		Map<String, Object> map = new HashMap<String, Object>();
-		System.out.println(comment);
+		MemberVO user =(MemberVO) session.getAttribute("user");
+		boolean res = boardService.insertComment(comment,user);
+		map.put("result", res);
 		return map;
 	}	
 }
